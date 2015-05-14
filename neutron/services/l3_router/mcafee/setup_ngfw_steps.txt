@@ -1,0 +1,1552 @@
+Script started on Thu Mar 12 22:44:23 2015
+]0;ubuntu@zangrui-node: /opt/stack/neutron/neutron/services/l3_router/mcafeeubuntu@zangrui-node:/opt/stack/neutron/neutron/services/l3_router/mcafee$ ovs-vsctl add-br br-smc
+2015-03-12T22:44:34Z|00002|reconnect|WARN|unix:/var/run/openvswitch/db.sock: connection attempt failed (Permission denied)
+ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (Permission denied)
+]0;ubuntu@zangrui-node: /opt/stack/neutron/neutron/services/l3_router/mcafeeubuntu@zangrui-node:/opt/stack/neutron/neutron/services/l3_router/mcafee$ ovs-vsctl add-br br-smc[1@a[1@s[1P[1P[1@s[1@u[1@d[C[1@o[1@ 
+]0;ubuntu@zangrui-node: /opt/stack/neutron/neutron/services/l3_router/mcafeeubuntu@zangrui-node:/opt/stack/neutron/neutron/services/l3_router/mcafee$ vim /etc/[K[K[K[K[K[K[Km[K[K[Kwhere is [K[K[K[Kis vim
+vim: /usr/bin/vim.gnome /usr/bin/vim.tiny /usr/bin/vim.basic /usr/bin/vim /etc/vim /usr/bin/X11/vim.gnome /usr/bin/X11/vim.tiny /usr/bin/X11/vim.basic /usr/bin/X11/vim /usr/share/vim /usr/share/man/man1/vim.1.gz
+]0;ubuntu@zangrui-node: /opt/stack/neutron/neutron/services/l3_router/mcafeeubuntu@zangrui-node:/opt/stack/neutron/neutron/services/l3_router/mcafee$ v im [K[K[K[Kim /etc/neu[K[Ke[K[K[K/neutron/
+api-paste.ini       fwaas_driver.ini    metadata_agent.ini  plugins/            rootwrap.conf       
+dhcp_agent.ini      l3_agent.ini        neutron.conf        policy.json         rootwrap.d/         
+]0;ubuntu@zangrui-node: /opt/stack/neutron/neutron/services/l3_router/mcafeeubuntu@zangrui-node:/opt/stack/neutron/neutron/services/l3_router/mcafee$ vim /etc/neutron/plugins/ml2/ml2_conf.ini 
+[?1049h[?1h=[2;1H▽[6n[1;1H  [1;1H[1;40r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[40;1H"/etc/neutron/plugins/ml2/ml2_conf.ini" 84L, 3011C[>c[1;1H[35m[46m[[m[35mml2[m[35m[46m][m
+[32mtenant_network_types =[m vxlan
+[32mtype_drivers =[m local,flat,vlan,gre,vxlan
+[32mmechanism_drivers =[m openvswitch,linuxbridge
+[34m# (ListOpt) List of network type driver entrypoints to be loaded from
+# the neutron.ml2.type_drivers namespace.
+#
+# type_drivers = local,flat,vlan,gre,vxlan
+# Example: type_drivers = flat,vlan,gre,vxlan
+
+# (ListOpt) Ordered list of network_types to allocate as tenant
+# networks. The default value 'local' is useful for single-box testing
+# but provides no connectivity between hosts.
+#
+# tenant_network_types = local
+# Example: tenant_network_types = vlan,gre,vxlan
+
+# (ListOpt) Ordered list of networking mechanism driver entrypoints
+# to be loaded from the neutron.ml2.mechanism_drivers namespace.
+# mechanism_drivers =
+# Example: mechanism_drivers = openvswitch,mlnx
+# Example: mechanism_drivers = arista
+# Example: mechanism_drivers = cisco,logger
+# Example: mechanism_drivers = openvswitch,brocade
+# Example: mechanism_drivers = linuxbridge,brocade
+
+# (ListOpt) Ordered list of extension driver entrypoints
+# to be loaded from the neutron.ml2.extension_drivers namespace.
+# extension_drivers =
+# Example: extension_drivers = anewextensiondriver[m
+
+[35m[ml2_type_flat][m
+[34m# (ListOpt) List of physical_network names with which flat networks
+# can be created. Use * to allow flat networks with arbitrary
+# physical_network names.
+#
+# flat_networks =
+# Example:flat_networks = physnet1,physnet2
+# Example:flat_networks = *[m[40;130H1,1[11CTop[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[40;1H[K[40;1H/[?12l[?25hb[?25l[?12l[?25hr[?25l[?12l[?25hi[?25l[?12l[?25hg[?25l[?12l[?25he[?25l[?12l[?25h[?25l[40;6H[K[40;6H[?12l[?25h[?25l[40;5H[K[40;5H[?12l[?25hd[?25l[?12l[?25hg[?25l[?12l[?25he[?25l[?12l[?25h[?25l[1;1H[35m[ml2][m[40;130H4,38[10CTop[4;38H[?12l[?25h[?25l[40;130H[K[40;1H[129C25,37[9CTop[25;37H[?12l[?25h[?25l[40;130H[K[40;1H[31msearch hit BOTTOM, continuing at TOP[m[93C4,38[10CTop[40;130H[K[40;130H4,38[10CTop[4;38H[?12l[?25h[?25l[40;1H/bridge[40;8H[K[40;1H[129C25,37[9CTop[25;37H[?12l[?25h[?25l[40;130H[K[40;1H[31msearch hit BOTTOM, continuing at TOP[m[93C4,38[10CTop[40;130H[K[40;130H4,38[10CTop[4;38H[?12l[?25h[?25l[40;1H/bridge[40;8H[K[40;1H[129C25,37[9CTop[25;37H[?12l[?25h[?25l[40;131H6,0-1[26;1H[?12l[?25h[?25l[40;131H7,37 [27;37H[?12l[?25h[?25l[40;131H8[28;37H[?12l[?25h[?25l[40;131H9,21[29;21H[?12l[?25h[?25l[40;130H30,37[30;37H[?12l[?25h[?25l[40;131H1,0-1[31;1H[?12l[?25h[?25l
+[35m[46m[[13C][m[40;131H2,15 [32;15H[?12l[?25h[?25l[35m[[13C][m[40;131H3,37[33;37H[?12l[?25h[?25l[40;131H4[34;37H[?12l[?25h[?25l[40;131H5,25[35;25H[?12l[?25h[?25l[40;131H6,1 [36;1H[?12l[?25h[?25l[40;131H7,17[37;17H[?12l[?25h[?25l[40;131H8,3[38;37H[?12l[?25h[?25l[40;131H9,2[39;27H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[40;1H[K[40;130H40,0-1[9C2%[39;1H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[35m[46m[[m[35mml2_type_vlan[m[35m[46m][m[40;130H[K[40;130H41,15[10C4%[39;15H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[38;1H[35m[[13C][m
+[34m# (ListOpt) List of <physical_network>[:<vlan_min>:<vlan_max>] tuples[m[40;130H[K[40;130H42,37[10C6%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# specifying physical_network names usable for VLAN provider and[m[40;130H[K[40;130H43,37[10C8%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# tenant networks, as well as ranges of VLAN tags on each[m[40;130H[K[40;130H44,37[9C11%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# physical_network available for allocation as tenant networks.[m[40;130H[K[40;130H45,37[9C13%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m#[m[40;130H[K[40;130H46,1[10C15%[39;1H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# network_vlan_ranges =[m[40;130H[K[40;130H47,23[9C17%[39;23H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# Example: network_vlan_ranges = physnet1:1000:2999,physnet2[m[40;130H[K[40;130H48,37[9C20%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[40;130H[K[40;130H49,0-1[8C22%[39;1H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[35m[46m[[m[35mml2_type_gre[m[35m[46m][m[40;130H[K[40;130H50,14[9C24%[39;14H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[38;1H[35m[[12C][m
+[32mtunnel_id_ranges =[m [31m1[m:[31m1000[m[40;130H[K[40;130H51,25[9C26%[39;25H[?12l[?25h[?25l[1;39r[1;1H[2M[1;40r[38;1H[34m# (ListOpt) Comma-separated list of <tun_min>:<tun_max> tuples enumerating ranges of GRE tunnel IDs that are available for tenant network allocatioo[39;1Hn[m[40;130H[K[40;130H52,37[9C30%[38;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# tunnel_id_ranges =[m[40;130H[K[40;130H53,20[9C32%[39;20H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[40;130H[K[40;130H54,0-1[8C34%[39;1H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[35m[46m[[m[35mml2_type_vxlan[m[35m[46m][m[40;130H[K[40;130H55,16[9C36%[39;16H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[38;1H[35m[[14C][m
+[32mvni_ranges =[m [31m1001[m:[31m2000[m[40;130H[K[40;130H56,22[9C39%[39;22H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# (ListOpt) Comma-separated list of <vni_min>:<vni_max> tuples enumerating[m[40;130H[K[40;130H57,37[9C41%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# ranges of VXLAN VNI IDs that are available for tenant network allocation.[m[40;130H[K[40;130H58,37[9C43%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m#[m[40;130H[K[40;130H59,1[10C45%[39;1H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# vni_ranges =[m[40;130H[K[40;130H60,14[9C47%[39;14H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[40;130H[K[40;130H61,0-1[8C50%[39;1H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# (StrOpt) Multicast group for the VXLAN interface. When configured, will[m[40;130H[K[40;130H62,37[9C52%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# enable sending all broadcast traffic to this multicast group. When left[m[40;130H[K[40;130H63,37[9C54%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# unconfigured, will disable multicast VXLAN mode.[m[40;130H[K[40;130H64,37[9C56%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m#[m[40;130H[K[40;130H65,1[10C58%[39;1H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# vxlan_group =[m[40;130H[K[40;130H66,15[9C60%[39;15H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# Example: vxlan_group = 239.1.1.1[m[40;130H[K[40;130H67,34[9C63%[39;34H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[40;130H[K[40;130H68,0-1[8C65%[39;1H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[35m[46m[[m[35msecuritygroup[m[35m[46m][m[40;130H[K[40;130H69,15[9C67%[39;15H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[38;1H[35m[[13C][m
+[32mfirewall_driver =[m neutron.agent.linux.iptables_firewall.OVSHybridIptablesFirewallDriver[40;130H[K[40;130H70,37[9C69%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# Controls if neutron security group is enabled or not.[m[40;130H[K[40;130H71,37[9C71%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# It should be false when you use nova security group.[m[40;130H[K[40;130H72,37[9C73%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# enable_security_group = True[m[40;130H[K[40;130H73,30[9C76%[39;30H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[40;130H[K[40;130H74,0-1[8C78%[39;1H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# Use ipset to speed-up the iptables security groups. Enabling ipset support[m[40;130H[K[40;130H75,37[9C80%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# requires that ipset is installed on L2 agent node.[m[40;130H[K[40;130H76,37[9C82%[39;37H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[34m# enable_ipset = True[m[40;130H[K[40;130H77,21[9C84%[39;21H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[40;130H[K[40;130H78,0-1[8C86%[39;1H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[35m[46m[[m[35movs[m[35m[46m][m[40;130H[K[40;130H79,5[10C89%[39;5H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[38;1H[35m[ovs][m
+[32mlocal_ip =[m [31m10.239[m.[31m48.110[m[40;130H[K[40;130H80,24[9C91%[39;24H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[40;130H[K[40;130H81,0-1[8C93%[39;1H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[35m[46m[[m[35magent[m[35m[46m][m[40;130H[K[40;130H82,7[10C95%[39;7H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[38;1H[35m[agent][m
+[32mtunnel_types =[m vxlan[40;130H[K[40;130H83,20[9C97%[39;20H[?12l[?25h[?25l[1;39r[39;1H
+[1;40r[39;1H[32mroot_helper =[m sudo /usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf[40;130H[K[40;130H84,37[9CBot[39;37H[?12l[?25h[?25l[40;131H3,20[38;20H[?12l[?25h[?25l[37;1H[35m[46m[[5C][m[40;131H2,7 [37;7H[?12l[?25h[?25l[35m[agent][m[40;131H1,0-1[36;1H[?12l[?25h[?25l[40;131H0,24 [35;24H[?12l[?25h[27m[m[H[2J[?25l[1;1H[34m# vni_ranges =
+
+# (StrOpt) Multicast group for the VXLAN interface. When configured, will
+# enable sending all broadcast traffic to this multicast group. When left
+# unconfigured, will disable multicast VXLAN mode.
+#
+# vxlan_group =
+# Example: vxlan_group = 239.1.1.1[m
+
+[35m[securitygroup][m
+[32mfirewall_driver =[m neutron.agent.linux.iptables_firewall.OVSHybridIptablesFirewall[12;1HlDriver
+[34m# Controls if neutron security group is enabled or not.
+# It should be false when you use nova security group.
+# enable_security_group = True
+
+# Use ipset to speed-up the iptables security groups. Enabling ipset support
+# requires that ipset is installed on L2 agent node.
+# enable_ipset = True[m
+
+[35m[ovs][m
+[32mlocal_ip =[m [31m10.239[m.[31m48.110[m[24;63H80,24[9C95%[22;24H[?12l[?25h[?25l
+
+[1m-- INSERT --[m[24;63H[K[24;63H81,1[10C93%[23;1H[?12l[?25h[?25lb[24;66H2[23;2H[?12l[?25h[?25lr[24;66H3[23;3H[?12l[?25h[?25li[24;66H4[23;4H[?12l[?25h[?25ld[24;66H5[23;5H[?12l[?25h[?25lg[24;66H6[23;6H[?12l[?25h[?25le[24;66H7[23;7H[?12l[?25h[?25l_[24;66H8[23;8H[?12l[?25h[?25lm[24;66H9[23;9H[?12l[?25h[?25la[24;66H10[23;10H[?12l[?25h[?25lp[24;67H1[23;11H[?12l[?25h[?25lp[24;67H2[23;12H[?12l[?25h[?25li[24;67H3[23;13H[?12l[?25h[?25ln[24;67H4[23;14H[?12l[?25h[?25lg[24;67H5[23;15H[?12l[?25h[?25ls[24;67H6[23;16H[?12l[?25h[?25l[24;67H7[23;17H[?12l[?25h[?25l[32mbridge_mappings =[m[24;67H8[23;18H[?12l[?25h[?25l[24;67H9[23;19H[?12l[?25h[?25lp[24;66H20[23;20H[?12l[?25h[?25lh[24;67H1[23;21H[?12l[?25h[?25ly[24;67H2[23;22H[?12l[?25h[?25ls[24;67H3[23;23H[?12l[?25h[?25le[24;67H4[23;24H[?12l[?25h[?25lt[24;67H5[23;25H[?12l[?25h[?25l1[24;67H6[23;26H[?12l[?25h[?25l:[24;67H7[23;27H[?12l[?25h[?25lb[24;67H8[23;28H[?12l[?25h[?25lr[24;67H9[23;29H[?12l[?25h[?25l-[24;66H30[23;30H[?12l[?25h[?25ls[24;67H1[23;31H[?12l[?25h[?25lm[24;67H2[23;32H[?12l[?25h[?25lc[24;67H3[23;33H[?12l[?25h[24;1H[K[23;32H[?25l[24;63H81,32[9C93%[23;32H[?12l[?25h[?25l[1;23r[23;1H
+[1;24r[24;63H[K[24;63H82,0-1[8C95%[23;1H[?12l[?25h[?25l[1;23r[23;1H
+[1;24r[23;1H[35m[46m[[m[35magent[m[35m[46m][m[24;63H[K[24;63H83,7[10C96%[23;7H[?12l[?25h[?25l[1;23r[23;1H
+[1;24r[22;1H[35m[agent][m
+[32mtunnel_types =[m vxlan[24;63H[K[24;63H84,20[9C98%[23;20H[?12l[?25h[?25l[1;23r[23;1H
+[1;24r[23;1H[32mroot_helper =[m sudo /usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf[24;63H[K[24;63H85,32[9CBot[23;32H[?12l[?25h[?25l[24;63H[K[24;1H:[?12l[?25hw[?25l[?12l[?25hq[?25l[?12l[?25h[?25l"/etc/neutron/plugins/ml2/ml2_conf.ini" 85L, 3044C written
+[?1l>[?12l[?25h[?1049l]0;ubuntu@zangrui-node: /opt/stack/neutron/neutron/services/l3_router/mcafeeubuntu@zangrui-node:/opt/stack/neutron/neutron/services/l3_router/mcafee$ 
+]0;ubuntu@zangrui-node: /opt/stack/neutron/neutron/services/l3_router/mcafeeubuntu@zangrui-node:/opt/stack/neutron/neutron/services/l3_router/mcafee$ 
+]0;ubuntu@zangrui-node: /opt/stack/neutron/neutron/services/l3_router/mcafeeubuntu@zangrui-node:/opt/stack/neutron/neutron/services/l3_router/mcafee$ 
+]0;ubuntu@zangrui-node: /opt/stack/neutron/neutron/services/l3_router/mcafeeubuntu@zangrui-node:/opt/stack/neutron/neutron/services/l3_router/mcafee$ 
+]0;ubuntu@zangrui-node: /opt/stack/neutron/neutron/services/l3_router/mcafeeubuntu@zangrui-node:/opt/stack/neutron/neutron/services/l3_router/mcafee$ ls
+__init__.py     ngfw_driver.pyc          ngfw_smc_driver.py
+__init__.pyc    ngfw_neutron_plugin.py   ngfw_smc_driver.pyc
+ngfw_driver.py  ngfw_neutron_plugin.pyc  setup_ngfw_steps.txt
+]0;ubuntu@zangrui-node: /opt/stack/neutron/neutron/services/l3_router/mcafeeubuntu@zangrui-node:/opt/stack/neutron/neutron/services/l3_router/mcafee$ c[Kneutro n help b[Knet-create
+unsupported locale setting
+]0;ubuntu@zangrui-node: /opt/stack/neutron/neutron/services/l3_router/mcafeeubuntu@zangrui-node:/opt/stack/neutron/neutron/services/l3_router/mcafee$ ls
+__init__.py     ngfw_driver.pyc          ngfw_smc_driver.py
+__init__.pyc    ngfw_neutron_plugin.py   ngfw_smc_driver.pyc
+ngfw_driver.py  ngfw_neutron_plugin.pyc  setup_ngfw_steps.txt
+]0;ubuntu@zangrui-node: /opt/stack/neutron/neutron/services/l3_router/mcafeeubuntu@zangrui-node:/opt/stack/neutron/neutron/services/l3_router/mcafee$ cd /[K[K[K[Kcd 
+]0;ubuntu@zangrui-node: ~ubuntu@zangrui-node:~$ ls
+[0m[01;34mjob_wyl[0m  [01;31mmcafee.tar.gz[0m  [01;32mngfw58openstack-1.img[0m  shim_vm.img  smc_win_20g.img
+]0;ubuntu@zangrui-node: ~ubuntu@zangrui-node:~$ cd y[Kjob_wyl/
+]0;ubuntu@zangrui-node: ~/job_wylubuntu@zangrui-node:~/job_wyl$ ls
+[0m[01;34mdevstack[0m  [01;34mproxy-setup[0m
+]0;ubuntu@zangrui-node: ~/job_wylubuntu@zangrui-node:~/job_wyl$ cd devstack/
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ ls
+FUTURE.rst       eucarc            [0m[01;34minc[0m              [01;32msetup.py[0m
+HACKING.rst      [01;32mexercise.sh[0m       [01;34mlib[0m              stack-screenrc
+LICENSE          exerciserc        local.conf       [01;32mstack.sh[0m
+MAINTAINERS.rst  [01;34mexercises[0m         openrc           stackrc
+README.md        [01;34mextras.d[0m          [01;34mpkg[0m              [01;34mtests[0m
+[01;34maccrc[0m            [01;34mfiles[0m             [01;32mrejoin-stack.sh[0m  [01;34mtools[0m
+[01;32mclean.sh[0m         functions         [01;32mrun_tests.sh[0m     tox.ini
+[01;34mdoc[0m              functions-common  [01;34msamples[0m          [01;32munstack.sh[0m
+[01;34mdriver_certs[0m     [01;34mgate[0m              setup.cfg
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ srouce[K[K[K[K[K[Ksource openrc  demo demo
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ neutron net-creat~[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksource openrc  demo demo[K[K[K[K[K[K[K[K[Kadmin demo[K[K[K[Kadmin
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ neutron net-create[K[K[K[K[K[K[K[K[K[Khelp net-create
+unsupported locale setting
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ echo [K[K[K[K[Kenv | grep loca
+PATH=/usr/[01;31m[Kloca[m[Kl/sbin:/usr/[01;31m[Kloca[m[Kl/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/[01;31m[Kloca[m[Kl/games
+GIT_PROXY_COMMAND=/usr/[01;31m[Kloca[m[Kl/bin/socks-gateway
+no_proxy=intel.com,*.intel.com,10.0.0.0/8,192.168.0.0/16,127.0.0.0/8,[01;31m[Kloca[m[Klhost,10.239.48.110
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ ls
+FUTURE.rst       eucarc            [0m[01;34minc[0m              [01;32msetup.py[0m
+HACKING.rst      [01;32mexercise.sh[0m       [01;34mlib[0m              stack-screenrc
+LICENSE          exerciserc        local.conf       [01;32mstack.sh[0m
+MAINTAINERS.rst  [01;34mexercises[0m         openrc           stackrc
+README.md        [01;34mextras.d[0m          [01;34mpkg[0m              [01;34mtests[0m
+[01;34maccrc[0m            [01;34mfiles[0m             [01;32mrejoin-stack.sh[0m  [01;34mtools[0m
+[01;32mclean.sh[0m         functions         [01;32mrun_tests.sh[0m     tox.ini
+[01;34mdoc[0m              functions-common  [01;34msamples[0m          [01;32munstack.sh[0m
+[01;34mdriver_certs[0m     [01;34mgate[0m              setup.cfg
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ locale
+locale: Cannot set LC_ALL to default locale: No such file or directory
+LANG=en_US.UTF-8
+LANGUAGE=
+LC_CTYPE="en_US.UTF-8"
+LC_NUMERIC=zh_CN.UTF-8
+LC_TIME=zh_CN.UTF-8
+LC_COLLATE="en_US.UTF-8"
+LC_MONETARY=zh_CN.UTF-8
+LC_MESSAGES="en_US.UTF-8"
+LC_PAPER=zh_CN.UTF-8
+LC_NAME=zh_CN.UTF-8
+LC_ADDRESS=zh_CN.UTF-8
+LC_TELEPHONE=zh_CN.UTF-8
+LC_MEASUREMENT=zh_CN.UTF-8
+LC_IDENTIFICATION=zh_CN.UTF-8
+LC_ALL=
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ export LC_ALL=en_US.UTF-8
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ export LC_ALL=en_US.UTF-8locale[K
+LANG=en_US.UTF-8
+LANGUAGE=
+LC_CTYPE="en_US.UTF-8"
+LC_NUMERIC="en_US.UTF-8"
+LC_TIME="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_MONETARY="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_PAPER="en_US.UTF-8"
+LC_NAME="en_US.UTF-8"
+LC_ADDRESS="en_US.UTF-8"
+LC_TELEPHONE="en_US.UTF-8"
+LC_MEASUREMENT="en_US.UTF-8"
+LC_IDENTIFICATION="en_US.UTF-8"
+LC_ALL=en_US.UTF-8
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ localeexport LC_ALL=en_US.UTF-8locale[Ks[Kenv | grep locaneutron help net-create
+usage: neutron net-create [-h] [-f {html,json,shell,table,value,yaml}]
+                          [-c COLUMN] [--max-width <integer>]
+                          [--prefix PREFIX] [--request-format {json,xml}]
+                          [--tenant-id TENANT_ID] [--admin-state-down]
+                          [--shared] [--router:external]
+                          [--provider:network_type <network_type>]
+                          [--provider:physical_network <physical_network_name>]
+                          [--provider:segmentation_id <segmentation_id>]
+                          NAME
+
+Create a network for a given tenant.
+
+positional arguments:
+  NAME                  Name of network to create.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --request-format {json,xml}
+                        The XML or JSON request format.
+  --tenant-id TENANT_ID
+                        The owner tenant ID.
+  --admin-state-down    Set admin state up to false.
+  --shared              Set the network as shared.
+  --router:external     Set network as external, it is only available for
+                        admin
+  --provider:network_type <network_type>
+                        The physical mechanism by which the virtual network is
+                        implemented.
+  --provider:physical_network <physical_network_name>
+                        Name of the physical network over which the virtual
+                        network is implemented.
+  --provider:segmentation_id <segmentation_id>
+                        VLAN ID for VLAN networks or tunnel-id for GRE/VXLAN
+                        networks.
+
+output formatters:
+  output formatter options
+
+  -f {html,json,shell,table,value,yaml}, --format {html,json,shell,table,value,yaml}
+                        the output format, defaults to table
+  -c COLUMN, --column COLUMN
+                        specify the column(s) to include, can be repeated
+
+table formatter:
+  --max-width <integer>
+                        Maximum display width, 0 to disable
+
+shell formatter:
+  a format a UNIX shell can parse (variable="value")
+
+  --prefix PREFIX       add a prefix to all variable names
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [K]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$  neutron create-network[K[K[K[K[K[K[K[K[K[K[K[K[K[Knet-create smc_b[Knetwork --provider:network_thyp[K[K[Kype=falat[K[K[K[K[Kflat ==[K[K--provider:network_[K[K[K[K[K[K[K[Kphysci[K[Kical_new[Ktwork=phsnet1[K[K[K[K[Kysnet1 -- [Kshared  ----router:external[C[1Prouter:external[C[C[1Prouter:external
+Created a new network:
++---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| id                        | f4f426d1-3ce9-44a9-8d58-8232b502e1aa |
+| name                      | smc_network                          |
+| provider:network_type     | flat                                 |
+| provider:physical_network | physnet1                             |
+| provider:segmentation_id  |                                      |
+| router:external           | True                                 |
+| shared                    | True                                 |
+| status                    | ACTIVE                               |
+| subnets                   |                                      |
+| tenant_id                 | 1871c50a9b504e58a88f4da930cf8557     |
++---------------------------+--------------------------------------+
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ ls[K[Ko[Ksudo ovs-vsctl -h
+ovs-vsctl: ovs-vswitchd management utility
+usage: ovs-vsctl [OPTIONS] COMMAND [ARG...]
+
+Open vSwitch commands:
+  init                        initialize database, if not yet initialized
+  show                        print overview of database contents
+  emer-reset                  reset configuration to clean state
+
+Bridge commands:
+  add-br BRIDGE               create a new bridge named BRIDGE
+  add-br BRIDGE PARENT VLAN   create new fake BRIDGE in PARENT on VLAN
+  del-br BRIDGE               delete BRIDGE and all of its ports
+  list-br                     print the names of all the bridges
+  br-exists BRIDGE            exit 2 if BRIDGE does not exist
+  br-to-vlan BRIDGE           print the VLAN which BRIDGE is on
+  br-to-parent BRIDGE         print the parent of BRIDGE
+  br-set-external-id BRIDGE KEY VALUE  set KEY on BRIDGE to VALUE
+  br-set-external-id BRIDGE KEY  unset KEY on BRIDGE
+  br-get-external-id BRIDGE KEY  print value of KEY on BRIDGE
+  br-get-external-id BRIDGE  list key-value pairs on BRIDGE
+
+Port commands (a bond is considered to be a single port):
+  list-ports BRIDGE           print the names of all the ports on BRIDGE
+  add-port BRIDGE PORT        add network device PORT to BRIDGE
+  add-bond BRIDGE PORT IFACE...  add bonded port PORT in BRIDGE from IFACES
+  del-port [BRIDGE] PORT      delete PORT (which may be bonded) from BRIDGE
+  port-to-br PORT             print name of bridge that contains PORT
+
+Interface commands (a bond consists of multiple interfaces):
+  list-ifaces BRIDGE          print the names of all interfaces on BRIDGE
+  iface-to-br IFACE           print name of bridge that contains IFACE
+
+Controller commands:
+  get-controller BRIDGE      print the controllers for BRIDGE
+  del-controller BRIDGE      delete the controllers for BRIDGE
+  set-controller BRIDGE TARGET...  set the controllers for BRIDGE
+  get-fail-mode BRIDGE       print the fail-mode for BRIDGE
+  del-fail-mode BRIDGE       delete the fail-mode for BRIDGE
+  set-fail-mode BRIDGE MODE  set the fail-mode for BRIDGE to MODE
+
+Manager commands:
+  get-manager                print the managers
+  del-manager                delete the managers
+  set-manager TARGET...      set the list of managers to TARGET...
+
+SSL commands:
+  get-ssl                     print the SSL configuration
+  del-ssl                     delete the SSL configuration
+  set-ssl PRIV-KEY CERT CA-CERT  set the SSL configuration
+
+Switch commands:
+  emer-reset                  reset switch to known good state
+
+Database commands:
+  list TBL [REC]              list RECord (or all records) in TBL
+  find TBL CONDITION...       list records satisfying CONDITION in TBL
+  get TBL REC COL[:KEY]       print values of COLumns in RECord in TBL
+  set TBL REC COL[:KEY]=VALUE set COLumn values in RECord in TBL
+  add TBL REC COL [KEY=]VALUE add (KEY=)VALUE to COLumn in RECord in TBL
+  remove TBL REC COL [KEY=]VALUE  remove (KEY=)VALUE from COLumn
+  clear TBL REC COL           clear values from COLumn in RECord in TBL
+  create TBL COL[:KEY]=VALUE  create and initialize new record
+  destroy TBL REC             delete RECord from TBL
+  wait-until TBL REC [COL[:KEY]=VALUE]  wait until condition is true
+Potentially unsafe database commands require --force option.
+
+Options:
+  --db=DATABASE               connect to DATABASE
+                              (default: unix:/var/run/openvswitch/db.sock)
+  --no-wait                   do not wait for ovs-vswitchd to reconfigure
+  --retry                     keep trying to connect to server forever
+  -t, --timeout=SECS          wait at most SECS seconds for ovs-vswitchd
+  --dry-run                   do not commit changes to database
+  --oneline                   print exactly one line of output per command
+
+Logging options:
+  -v, --verbose=[SPEC]    set logging levels
+  -v, --verbose           set maximum verbosity level
+  --log-file[=FILE]       enable logging to specified FILE
+                          (default: /var/log/openvswitch/ovs-vsctl.log)
+  --no-syslog             equivalent to --verbose=vsctl:syslog:warn
+
+Active database connection methods:
+  tcp:IP:PORT             PORT at remote IP
+  ssl:IP:PORT             SSL PORT at remote IP
+  unix:FILE               Unix domain socket named FILE
+Passive database connection methods:
+  ptcp:PORT[:IP]          listen to TCP PORT on IP
+  pssl:PORT[:IP]          listen for SSL on PORT on IP
+  punix:FILE              listen on Unix domain socket FILE
+PKI configuration (required to use SSL):
+  -p, --private-key=FILE  file with private key
+  -c, --certificate=FILE  file with certificate for private key
+  -C, --ca-cert=FILE      file with peer CA certificate
+
+Other options:
+  -h, --help                  display this help message
+  -V, --version               display version information
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo ovs
+ovs-appctl           ovsdb-client         ovs-dpctl            ovs-parse-backtrace  ovs-tcpundump        ovs-vswitchd
+ovs-benchmark        ovsdb-server         ovs-dpctl-top        ovs-pcap             ovs-vlan-test        
+ovs-bugtool          ovsdb-tool           ovs-ofctl            ovs-pki              ovs-vsctl            
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo ovs
+ovs-appctl           ovsdb-client         ovs-dpctl            ovs-parse-backtrace  ovs-tcpundump        ovs-vswitchd
+ovs-benchmark        ovsdb-server         ovs-dpctl-top        ovs-pcap             ovs-vlan-test        
+ovs-bugtool          ovsdb-tool           ovs-ofctl            ovs-pki              ovs-vsctl            
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo ovs- =[K[Kctl add-port ovs-[K[K[K[Ksmc-br[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kifconfig
+br-ex     Link encap:Ethernet  HWaddr 62:55:d4:cd:90:45  
+          inet addr:172.24.4.1  Bcast:0.0.0.0  Mask:255.255.255.0
+          UP BROADCAST RUNNING  MTU:1500  Metric:1
+          RX packets:11 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:874 (874.0 B)  TX bytes:270 (270.0 B)
+
+br-int    Link encap:Ethernet  HWaddr 4a:81:a4:05:c9:44  
+          inet6 addr: fe80::3c2b:e0ff:fec7:cf91/64 Scope:Link
+          UP BROADCAST RUNNING  MTU:1500  Metric:1
+          RX packets:11 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:8 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:874 (874.0 B)  TX bytes:648 (648.0 B)
+
+br-smc    Link encap:Ethernet  HWaddr 92:80:0c:5e:09:42  
+          inet6 addr: fe80::5097:3dff:fea8:1403/64 Scope:Link
+          UP BROADCAST RUNNING  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:8 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:648 (648.0 B)
+
+br-tun    Link encap:Ethernet  HWaddr be:6f:76:34:3c:48  
+          inet6 addr: fe80::44c0:4cff:fe42:62f4/64 Scope:Link
+          UP BROADCAST RUNNING  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:8 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:648 (648.0 B)
+
+eth0      Link encap:Ethernet  HWaddr 00:1e:67:57:4e:d9  
+          inet addr:30.168.98.59  Bcast:30.168.98.255  Mask:255.255.255.0
+          inet6 addr: fe80::21e:67ff:fe57:4ed9/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:198635 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:174528 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:38361658 (38.3 MB)  TX bytes:42439209 (42.4 MB)
+          Memory:d0960000-d0980000 
+
+eth1      Link encap:Ethernet  HWaddr 00:1e:67:57:4e:da  
+          inet addr:10.239.48.110  Bcast:10.239.48.255  Mask:255.255.255.0
+          inet6 addr: fe80::21e:67ff:fe57:4eda/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:26644001 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:13420440 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:35587636506 (35.5 GB)  TX bytes:1025947266 (1.0 GB)
+          Memory:d0940000-d0960000 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:12689985 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:12689985 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:85832000853 (85.8 GB)  TX bytes:85832000853 (85.8 GB)
+
+virbr0    Link encap:Ethernet  HWaddr 02:7c:53:a4:ff:46  
+          inet addr:192.168.122.1  Bcast:192.168.122.255  Mask:255.255.255.0
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$  ifconfigsudo ovs-vsctl -h[K[K[K add-port br-smc
+ovs-vsctl: 'add-port' command requires at least 2 arguments
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo ovs-vsctl add-port br-smc smc-port
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ ifconfig [K[K[K[K[K[K[K[K[Ksudo ifconfig br-smc 10.20.5.1 up net[K[K[K[K[K[Knetmask 255.255.255.0 up
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ ifconfig br-smc
+br-smc    Link encap:Ethernet  HWaddr 92:80:0c:5e:09:42  
+          inet addr:10.20.5.1  Bcast:10.20.5.255  Mask:255.255.255.0
+          inet6 addr: fe80::5097:3dff:fea8:1403/64 Scope:Link
+          UP BROADCAST RUNNING  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:8 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:648 (648.0 B)
+
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sodo[K[K[Kudo ovs-vsctl [K[K[K[K[K[K[K[K[K[K[K ifconfig smc-port 10.20.5.54 netmask 255l[K.255.255.0 up
+SIOCSIFADDR: No such device
+smc-port: ERROR while getting interface flags: No such device
+SIOCSIFNETMASK: No such device
+smc-port: ERROR while getting interface flags: No such device
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ ifconf[K[K[K[K[K[Kifconfig [K[K[K[K[K[K[K[K[Ksudo ifconfg[Kig | grep smc
+br-[01;31m[Ksmc[m[K    Link encap:Ethernet  HWaddr 92:80:0c:5e:09:42  
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo ovs-vsctl show
+ef8b57db-5187-489e-8e0e-9d3932bb35c9
+    Bridge br-int
+        fail_mode: secure
+        Port br-int
+            Interface br-int
+                type: internal
+        Port patch-tun
+            Interface patch-tun
+                type: patch
+                options: {peer=patch-int}
+        Port "qr-f2bb13d1-48"
+            tag: 1
+            Interface "qr-f2bb13d1-48"
+                type: internal
+    Bridge br-tun
+        fail_mode: secure
+        Port br-tun
+            Interface br-tun
+                type: internal
+        Port patch-int
+            Interface patch-int
+                type: patch
+                options: {peer=patch-tun}
+    Bridge br-smc
+        Port smc-port
+            Interface smc-port
+        Port br-smc
+            Interface br-smc
+                type: internal
+    Bridge br-ex
+        Port br-ex
+            Interface br-ex
+                type: internal
+        Port "qg-cc8494ed-25"
+            Interface "qg-cc8494ed-25"
+                type: internal
+    ovs_version: "2.0.2"
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ o[Ksudo ovs-ctl dle[K[Kelete p[K[K-[o[K[Kport smc-[[Kport
+sudo: ovs-ctl: command not found
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo ovs-ctl delete-port smc-port[C[1@v[1@s
+ovs-vsctl: unknown command 'delete-port'; use --help for help
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo ovs-vsctl delete-port smc-port[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Khelp
+ovs-vsctl: unknown command 'help'; use --help for help
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo ovs-vsctl help[K[K[K[K
+ovs-vsctl: missing command name (use --help for help)
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo ovs-vsctl help-help-help
+ovs-vsctl: ovs-vswitchd management utility
+usage: ovs-vsctl [OPTIONS] COMMAND [ARG...]
+
+Open vSwitch commands:
+  init                        initialize database, if not yet initialized
+  show                        print overview of database contents
+  emer-reset                  reset configuration to clean state
+
+Bridge commands:
+  add-br BRIDGE               create a new bridge named BRIDGE
+  add-br BRIDGE PARENT VLAN   create new fake BRIDGE in PARENT on VLAN
+  del-br BRIDGE               delete BRIDGE and all of its ports
+  list-br                     print the names of all the bridges
+  br-exists BRIDGE            exit 2 if BRIDGE does not exist
+  br-to-vlan BRIDGE           print the VLAN which BRIDGE is on
+  br-to-parent BRIDGE         print the parent of BRIDGE
+  br-set-external-id BRIDGE KEY VALUE  set KEY on BRIDGE to VALUE
+  br-set-external-id BRIDGE KEY  unset KEY on BRIDGE
+  br-get-external-id BRIDGE KEY  print value of KEY on BRIDGE
+  br-get-external-id BRIDGE  list key-value pairs on BRIDGE
+
+Port commands (a bond is considered to be a single port):
+  list-ports BRIDGE           print the names of all the ports on BRIDGE
+  add-port BRIDGE PORT        add network device PORT to BRIDGE
+  add-bond BRIDGE PORT IFACE...  add bonded port PORT in BRIDGE from IFACES
+  del-port [BRIDGE] PORT      delete PORT (which may be bonded) from BRIDGE
+  port-to-br PORT             print name of bridge that contains PORT
+
+Interface commands (a bond consists of multiple interfaces):
+  list-ifaces BRIDGE          print the names of all interfaces on BRIDGE
+  iface-to-br IFACE           print name of bridge that contains IFACE
+
+Controller commands:
+  get-controller BRIDGE      print the controllers for BRIDGE
+  del-controller BRIDGE      delete the controllers for BRIDGE
+  set-controller BRIDGE TARGET...  set the controllers for BRIDGE
+  get-fail-mode BRIDGE       print the fail-mode for BRIDGE
+  del-fail-mode BRIDGE       delete the fail-mode for BRIDGE
+  set-fail-mode BRIDGE MODE  set the fail-mode for BRIDGE to MODE
+
+Manager commands:
+  get-manager                print the managers
+  del-manager                delete the managers
+  set-manager TARGET...      set the list of managers to TARGET...
+
+SSL commands:
+  get-ssl                     print the SSL configuration
+  del-ssl                     delete the SSL configuration
+  set-ssl PRIV-KEY CERT CA-CERT  set the SSL configuration
+
+Switch commands:
+  emer-reset                  reset switch to known good state
+
+Database commands:
+  list TBL [REC]              list RECord (or all records) in TBL
+  find TBL CONDITION...       list records satisfying CONDITION in TBL
+  get TBL REC COL[:KEY]       print values of COLumns in RECord in TBL
+  set TBL REC COL[:KEY]=VALUE set COLumn values in RECord in TBL
+  add TBL REC COL [KEY=]VALUE add (KEY=)VALUE to COLumn in RECord in TBL
+  remove TBL REC COL [KEY=]VALUE  remove (KEY=)VALUE from COLumn
+  clear TBL REC COL           clear values from COLumn in RECord in TBL
+  create TBL COL[:KEY]=VALUE  create and initialize new record
+  destroy TBL REC             delete RECord from TBL
+  wait-until TBL REC [COL[:KEY]=VALUE]  wait until condition is true
+Potentially unsafe database commands require --force option.
+
+Options:
+  --db=DATABASE               connect to DATABASE
+                              (default: unix:/var/run/openvswitch/db.sock)
+  --no-wait                   do not wait for ovs-vswitchd to reconfigure
+  --retry                     keep trying to connect to server forever
+  -t, --timeout=SECS          wait at most SECS seconds for ovs-vswitchd
+  --dry-run                   do not commit changes to database
+  --oneline                   print exactly one line of output per command
+
+Logging options:
+  -v, --verbose=[SPEC]    set logging levels
+  -v, --verbose           set maximum verbosity level
+  --log-file[=FILE]       enable logging to specified FILE
+                          (default: /var/log/openvswitch/ovs-vsctl.log)
+  --no-syslog             equivalent to --verbose=vsctl:syslog:warn
+
+Active database connection methods:
+  tcp:IP:PORT             PORT at remote IP
+  ssl:IP:PORT             SSL PORT at remote IP
+  unix:FILE               Unix domain socket named FILE
+Passive database connection methods:
+  ptcp:PORT[:IP]          listen to TCP PORT on IP
+  pssl:PORT[:IP]          listen for SSL on PORT on IP
+  punix:FILE              listen on Unix domain socket FILE
+PKI configuration (required to use SSL):
+  -p, --private-key=FILE  file with private key
+  -c, --certificate=FILE  file with certificate for private key
+  -C, --ca-cert=FILE      file with peer CA certificate
+
+Other options:
+  -h, --help                  display this help message
+  -V, --version               display version information
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$  sudo ovs-vsctl --help[Khelpdelete-port smc-port [C[1P[1P[1P[1P
+ovs-vsctl: unknown command 'de-port'; use --help for help
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo ovs-vsctl de-port smc-port [1@l
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo ta[Kune
+tune2fs  tunelp   
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo tune[Kclt
+sudo: tunclt: command not found
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo tunclt[K[Ktl
+sudo: tunctl: command not found
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ tuncl[Ktl
+The program 'tunctl' is currently not installed. You can install it by typing:
+sudo apt-get install uml-utilities
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo apt-get install uml-utilities
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+Suggested packages:
+  user-mode-linux
+The following NEW packages will be installed:
+  uml-utilities
+0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+Need to get 61.9 kB of archives.
+After this operation, 267 kB of additional disk space will be used.
+0% [Working]            0% [Waiting for headers]                        Get:1 http://archive.ubuntu.com/ubuntu/ trusty/universe uml-utilities amd64 20070815-1.3ubuntu1 [61.9 kB]
+                        6% [1 uml-utilities 3,697 B/61.9 kB 6%]                                       34% [1 uml-utilities 21.2 kB/61.9 kB 34%]                                         100% [Working]              Fetched 61.9 kB in 1s (41.7 kB/s)
+Selecting previously unselected package uml-utilities.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 46086 files and directories currently installed.)
+Preparing to unpack .../uml-utilities_20070815-1.3ubuntu1_amd64.deb ...
+Unpacking uml-utilities (20070815-1.3ubuntu1) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up uml-utilities (20070815-1.3ubuntu1) ...
+ * Starting User-mode networking switch uml_switch       [147G t[141G[ OK ]
+Processing triggers for ureadahead (0.100.0-16) ...
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ tun
+tunctl   tune2fs  tunelp   
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ tunclt [K[K[Ktl 
+TUNSETIFF: Operation not permitted
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ tunctl [1@s[1@u[1@d[1@o[1@ 
+Set 'tap0' persistent and owned by uid 0
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo tunctl -h
+tunctl: invalid option -- 'h'
+Create: tunctl [-b] [-u owner] [-g group] [-t device-name] [-f tun-clone-device]
+Delete: tunctl -d device-name [-f tun-clone-device]
+
+The default tun clone device is /dev/net/tun - some systems use
+/dev/misc/net/tun instead
+
+-b will result in brief output (just the device name)
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ am[K[Kman ta[Kunctl 
+[?1049h[?1h=TUNCTL(8)                                                   System Manager's Manual                                                   TUNCTL(8)[m
+[m
+[1mNAME[0m[m
+       tunctl — create and manage persistent TUN/TAP interfaces[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mtunctl[0m [[1m-f[0m [4mtun-clone-device[24m]  [[1m-u[0m [4mowner[24m]  [[1m-t[0m [4mdevice-name[24m][m
+[m
+       [1mtunctl[0m [[1m-f[0m [4mtun-clone-device[24m]  [1m-d[0m [4mdevice-name[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       This manual page documents briefly the [1mtunctl[0m command.[m
+[m
+       This  manual  page was written for the [1mDebian[0m [1mGNU/Linux[0m distribution because the original program does not have a manual page.  Instead,[m
+       it has documentation in HTML format; see below.[m
+[m
+       [1mtunctl[0m allows the host sysadmin to preconfigure a TUN/TAP device for use by a particular user.  That user may open and use  the  device,[m
+       but may not change any aspects of the host side of the interface.[m
+[m
+[1mUSAGE[0m[m
+       To create an interface for use by a particular user, invoke tunctl without the -d option:[m
+[m
+       #[m
+       [1mtunctl[0m [1m-u[0m [1msomeuser[0m[m
+       Set 'tap0' persistent and owned by 'someuser'[m
+[m
+       Then, configure the interface as normal:[m
+[m
+       #[m
+       [1mifconfig[0m [1mtap0[0m [1m192.168.0.254[0m [1mup[0m[m
+       #[m
+       [1mroute[0m [1madd[0m [1m-host[0m [1m192.168.0.253[0m [1mdev[0m [1mtap0[0m[m
+       #[m
+       [1mbash[0m [1m-c[0m [1m'echo[0m [1m1[0m [1m>[0m [1m/proc/sys/net/ipv4/conf/tap0/proxy_arp'[0m[m
+       #[m
+       [1marp[0m [1m-Ds[0m [1m192.168.0.253[0m [1meth0[0m [1mpub[0m[m
+[m
+       To delete the interface, use the -d option:[m
+[m
+[7m Manual page tunctl(8) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo tunctl -d tap0
+Set 'tap0' nonpersistent
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo tunctl  -d [K[K[Ktap-s[K[K[K[Kap-smc -u sta[K[K[Kubuntu
+Create: tunctl [-b] [-u owner] [-g group] [-t device-name] [-f tun-clone-device]
+Delete: tunctl -d device-name [-f tun-clone-device]
+
+The default tun clone device is /dev/net/tun - some systems use
+/dev/misc/net/tun instead
+
+-b will result in brief output (just the device name)
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo tunctl  tap-smc -u ubuntu[K[K[K[K[K[K[K[K[K[1@-[1@u[1@ [1@u[1@b[1@u[1@n[C[1@t[1@u[1@ 
+Create: tunctl [-b] [-u owner] [-g group] [-t device-name] [-f tun-clone-device]
+Delete: tunctl -d device-name [-f tun-clone-device]
+
+The default tun clone device is /dev/net/tun - some systems use
+/dev/misc/net/tun instead
+
+-b will result in brief output (just the device name)
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo tunctl  -u ubuntu tap-smc [1@-[C[1@t[1@ 
+Set 'tap-smc' persistent and owned by uid 1000
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo ovs-ctl [K[K[K[Kvsctl add-port br-smc tap-smc
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ if[K[Ksudo ifconfig br-smc[K[K[K[K[K[Ktap-smc 10.2[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kifconfig tap-smc up
+SIOCSIFFLAGS: Operation not permitted
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ ifconfig tap-smc up[1@s[1@u[1@d[1@o[1@ 
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ ping 10.20-[K.5.1
+PING 10.20.5.1 (10.20.5.1) 56(84) bytes of data.
+64 bytes from 10.20.5.1: icmp_seq=1 ttl=64 time=0.101 ms
+64 bytes from 10.20.5.1: icmp_seq=2 ttl=64 time=0.052 ms
+^C
+--- 10.20.5.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 999ms
+rtt min/avg/max/mdev = 0.052/0.076/0.101/0.026 ms
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ qemu-system-x86_64 --enable-kvm -m 2048 -hda work/ngfw/smc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5  -net tap,ifname=tap0,script=no,downscript=no[C[1P,script=no,downscript=no[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-,script=no,downscript=no[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs,script=no,downscript=no[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm,script=no,downscript=no[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc,script=no,downscript=no[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C, [1@-[1@v[1@l[1@a[1@n[1@=[1@1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C,vlan=1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csmc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vl[1P[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csmc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vla[1P[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csmc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan[1P[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csmc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=[1P[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csmc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1[1P[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csmc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1 [1P[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csmc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1 -[1P[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csmc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1 -n[1P[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csmc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1 -ne[1P[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csmc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1 -net[1P tap,ifname=tap-smc,script=no,downscript=no,vlan=1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csmc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1 -net [1Ptap,ifname=tap-smc,script=no,downscript=no,vlan=1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C smc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1 -net tap,ifname=tap-smc,script=no,downscript=no,vlan=1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C~smc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1 -net tap,ifname=tap-smc,script=no,downscript=no,vlan=1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/smc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1 -n[1@e[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+Could not access KVM kernel module: Permission denied
+failed to initialize KVM: Permission denied
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ qemu-system-x86_64 --enable-kvm -m 2048 -hda ~/smc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1 -nnet tap,ifname=tap-smc,script=no,downscript=no,vlan=1[Asqemu-system-x86_64 --enable-kvm -m 2048 -hda ~/smc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1 -[1@n[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [Cuqemu-system-x86_64 --enable-kvm -m 2048 -hda ~/smc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1 [1@-[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[Cdqemu-system-x86_64 --enable-kvm -m 2048 -hda ~/smc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=1[1@ [A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[C[Coqemu-system-x86_64 --enable-kvm -m 2048 -hda ~/smc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan=[1@1[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[C[C[C qemu-system-x86_64 --enable-kvm -m 2048 -hda ~/smc_win_20g.img  -net nic,macaddr=00:ff:91:b6:77:b5,vlan[1@=[A]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ [C[C[C[C[C
+
+Could not initialize SDL(No available video device) - exiting
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ vnc
+No command 'vnc' found, did you mean:
+ Command 'bvnc' from package 'avahi-ui-utils' (universe)
+ Command 'vpnc' from package 'vpnc' (universe)
+ Command 'inc' from package 'mailutils-mh' (universe)
+ Command 'inc' from package 'nmh' (universe)
+ Command 'znc' from package 'znc' (universe)
+ Command 'nc' from package 'netcat-traditional' (universe)
+ Command 'nc' from package 'netcat6' (universe)
+ Command 'nc' from package 'netcat-openbsd' (main)
+ Command 'vlc' from package 'vlc-nox' (universe)
+ Command 'vbnc' from package 'mono-vbnc' (universe)
+vnc: command not found
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ vncserver
+No command 'vncserver' found, did you mean:
+ Command 'vnc4server' from package 'vnc4server' (universe)
+vncserver: command not found
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ vnc4serv[K[K[K[K[K[K[K[Kman qemu
+[?1049h[?1h=QEMU(1)                                                                                                                                 QEMU(1)[m
+[m
+[1mNAME[0m[m
+       qemu-doc - QEMU Emulator User Documentation[m
+[m
+[1mSYNOPSIS[0m[m
+       usage: qemu-system-i386 [options] [[4mdisk_image[24m][m
+[m
+[1mDESCRIPTION[0m[m
+       The QEMU PC System emulator simulates the following peripherals:[m
+[m
+       -   i440FX host PCI bridge and PIIX3 PCI to ISA bridge[m
+[m
+       -   Cirrus CLGD 5446 PCI VGA card or dummy VGA card with Bochs VESA extensions (hardware level, including all non standard modes).[m
+[m
+       -   PS/2 mouse and keyboard[m
+[m
+       -   2 PCI IDE interfaces with hard disk and CD-ROM support[m
+[m
+       -   Floppy disk[m
+[m
+       -   PCI and ISA network adapters[m
+[m
+       -   Serial ports[m
+[m
+       -   Creative SoundBlaster 16 sound card[m
+[m
+       -   ENSONIQ AudioPCI ES1370 sound card[m
+[m
+       -   Intel 82801AA AC97 Audio compatible sound card[m
+[m
+       -   Intel HD Audio Controller and HDA codec[m
+[m
+       -   Adlib (OPL2) - Yamaha YM3812 compatible chip[m
+[m
+       -   Gravis Ultrasound GF1 sound card[m
+[m
+       -   CS4231A compatible sound card[m
+[m
+[7m Manual page qemu(1) line 1 (press h for help or q to quit)[27m[K[K       -   PCI UHCI USB controller and a virtual USB hub.[m
+[m
+       SMP is supported with up to 255 CPUs.[m
+[m
+       QEMU uses the PC BIOS from the Seabios project and the Plex86/Bochs LGPL VGA BIOS.[m
+[m
+       QEMU uses YM3812 emulation by Tatsuyuki Satoh.[m
+[m
+       QEMU uses GUS emulation (GUSEMU32 <[1mhttp://www.deinmeister.de/gusemu/[0m>) by Tibor "TS" Schütz.[m
+[m
+       Note that, by default, GUS shares [4mIRQ[24m(7) with parallel ports and so QEMU must be told to not have parallel ports to have working GUS.[m
+[m
+               qemu-system-i386 dos.img -soundhw gus -parallel none[m
+[m
+       Alternatively:[m
+[m
+               qemu-system-i386 dos.img -device gus,irq=5[m
+[m
+       Or some other unclaimed IRQ.[m
+[m
+       CS4231A is the chip used in Windows Sound System and GUSMAX products[m
+[m
+[1mOPTIONS[0m[m
+       [4mdisk_image[24m is a raw hard disk image for IDE hard disk 0. Some targets do not need a disk image.[m
+[m
+       Standard options:[m
+[m
+       [1m-h[0m  Display help and exit[m
+[m
+       [1m-version[0m[m
+           Display version information and exit[m
+[m
+       [1m-machine[0m [1m[type=][0m[4mname[24m[1m[,prop=[0m[4mvalue[24m[1m[,...]][0m[m
+           Select the emulated machine by [4mname[24m. Use "-machine help" to list available machines. Supported machine properties are:[m
+[m
+           [1maccel=[0m[4maccels1[24m[1m[:[0m[4maccels2[24m[1m[:...]][0m[m
+               This is used to enable an accelerator. Depending on the target architecture, kvm, xen, or tcg can be available. By default, tcg[m
+               is used. If there is more than one accelerator specified, the next one is used if the previous one fails to initialize.[m
+[m
+[7m Manual page qemu(1) line 42 (press h for help or q to quit)[27m[K[K           [1mkernel_irqchip=on|off[0m[m
+               Enables in-kernel irqchip support for the chosen accelerator when available.[m
+[m
+           [1mkvm_shadow_mem=size[0m[m
+               Defines the size of the KVM shadow MMU.[m
+[m
+           [1mdump-guest-core=on|off[0m[m
+               Include guest memory in a core dump. The default is on.[m
+[m
+           [1mmem-merge=on|off[0m[m
+               Enables or disables memory merge support. This feature, when supported by the host, de-duplicates identical memory pages among[m
+               VMs instances (enabled by default).[m
+[m
+       [1m-cpu[0m [4mmodel[24m[m
+           Select CPU model ("-cpu help" for list and additional feature selection)[m
+[m
+       [1m-smp[0m [1m[cpus=][0m[4mn[24m[1m[,cores=[0m[4mcores[24m[1m][,threads=[0m[4mthreads[24m[1m][,sockets=[0m[4msockets[24m[1m][,maxcpus=[0m[4mmaxcpus[24m[1m][0m[m
+           Simulate an SMP system with [4mn[24m CPUs. On the PC target, up to 255 CPUs are supported. On Sparc32 target, Linux limits the number of[m
+           usable CPUs to 4.  For the PC target, the number of [4mcores[24m per socket, the number of [4mthreads[24m per cores and the total number of[m
+           [4msockets[24m can be specified. Missing values will be computed. If any on the three values is given, the total number of CPUs [4mn[24m can be[m
+           omitted. [4mmaxcpus[24m specifies the maximum number of hotpluggable CPUs.[m
+[m
+       [1m-numa[0m [4mopts[24m[m
+           Simulate a multi node NUMA system. If mem and cpus are omitted, resources are split equally.[m
+[m
+       [1m-add-fd[0m [1mfd=[0m[4mfd[24m[1m,set=[0m[4mset[24m[1m[,opaque=[0m[4mopaque[24m[1m][0m[m
+           Add a file descriptor to an fd set.  Valid options are:[m
+[m
+           [1mfd=[0m[4mfd[24m[m
+               This option defines the file descriptor of which a duplicate is added to fd set.  The file descriptor cannot be stdin, stdout,[m
+               or stderr.[m
+[m
+           [1mset=[0m[4mset[24m[m
+               This option defines the ID of the fd set to add the file descriptor to.[m
+[m
+           [1mopaque=[0m[4mopaque[24m[m
+               This option defines a free-form string that can be used to describe [4mfd[24m.[m
+[m
+           You can open an image using pre-opened file descriptors from an fd set:[m
+[7m Manual page qemu(1) line 81 (press h for help or q to quit)[27m[K[K[m
+                   qemu-system-i386[m
+                   -add-fd fd=3,set=2,opaque="rdwr:/path/to/file"[m
+                   -add-fd fd=4,set=2,opaque="rdonly:/path/to/file"[m
+                   -drive file=/dev/fdset/2,index=0,media=disk[m
+[m
+       [1m-set[0m [4mgroup[24m[1m.[0m[4mid[24m[1m.[0m[4marg[24m[1m=[0m[4mvalue[24m[m
+           Set parameter [4marg[24m for item [4mid[24m of type [4mgroup[24m "[m
+[m
+       [1m-global[0m [4mdriver[24m[1m.[0m[4mprop[24m[1m=[0m[4mvalue[24m[m
+           Set default value of [4mdriver[24m's property [4mprop[24m to [4mvalue[24m, e.g.:[m
+[m
+                   qemu-system-i386 -global ide-drive.physical_block_size=4096 -drive file=file,if=ide,index=0,media=disk[m
+[m
+           In particular, you can use this to set driver properties for devices which are created automatically by the machine model. To create[m
+           a device which is not created automatically and set properties on it, use -[1mdevice[0m.[m
+[m
+       [1m-boot[0m [1m[order=[0m[4mdrives[24m[1m][,once=[0m[4mdrives[24m[1m][,menu=on|off][,splash=[0m[4msp_name[24m[1m][,splash-time=[0m[4msp_time[24m[1m][,reboot-timeout=[0m[4mrb_timeout[24m[1m][,strict=on|off][0m[m
+           Specify boot order [4mdrives[24m as a string of drive letters. Valid drive letters depend on the target achitecture. The x86 PC uses: a, b[m
+           (floppy 1 and 2), c (first hard disk), d (first CD-ROM), n-p (Etherboot from network adapter 1-4), hard disk boot is the default. To[m
+           apply a particular boot order only on the first startup, specify it via [1monce[0m.[m
+[m
+           Interactive boot menus/prompts can be enabled via [1mmenu=on[0m as far as firmware/BIOS supports them. The default is non-interactive[m
+           boot.[m
+[m
+           A splash picture could be passed to bios, enabling user to show it as logo, when option splash=[4msp_name[24m is given and menu=on, If[m
+           firmware/BIOS supports them. Currently Seabios for X86 system support it.  limitation: The splash file could be a jpeg file or a BMP[m
+           file in 24 BPP format(true color). The resolution should be supported by the SVGA mode, so the recommended is 320x240, 640x480,[m
+           800x640.[m
+[m
+           A timeout could be passed to bios, guest will pause for [4mrb_timeout[24m ms when boot failed, then reboot. If [4mrb_timeout[24m is '-1', guest[m
+           will not reboot, qemu passes '-1' to bios by default. Currently Seabios for X86 system support it.[m
+[m
+           Do strict boot via [1mstrict=on[0m as far as firmware/BIOS supports it. This only effects when boot priority is changed by bootindex[m
+           options. The default is non-strict boot.[m
+[m
+                   # try to boot from network first, then from hard disk[m
+                   qemu-system-i386 -boot order=nc[m
+                   # boot from CD-ROM first, switch back to default order after reboot[m
+[7m Manual page qemu(1) line 120 (press h for help or q to quit)[27m[K[K                   qemu-system-i386 -boot once=d[m
+                   # boot with a splash picture for 5 seconds.[m
+                   qemu-system-i386 -boot menu=on,splash=/root/boot.bmp,splash-time=5000[m
+[m
+           Note: The legacy format '-boot [4mdrives[24m' is still supported but its use is discouraged as it may be removed from future versions.[m
+[m
+       [1m-m[0m [4mmegs[24m[m
+           Set virtual RAM size to [4mmegs[24m megabytes. Default is 128 MiB.  Optionally, a suffix of "M" or "G" can be used to signify a value in[m
+           megabytes or gigabytes respectively.[m
+[m
+       [1m-mem-path[0m [4mpath[24m[m
+           Allocate guest RAM from a temporarily created file in [4mpath[24m.[m
+[m
+       [1m-mem-prealloc[0m[m
+           Preallocate memory when using -mem-path.[m
+[m
+       [1m-k[0m [4mlanguage[24m[m
+           Use keyboard layout [4mlanguage[24m (for example "fr" for French). This option is only needed where it is not easy to get raw PC keycodes[m
+           (e.g. on Macs, with some X11 servers or with a VNC display). You don't normally need to use it on PC/Linux or PC/Windows hosts.[m
+[m
+           The available layouts are:[m
+[m
+                   ar  de-ch  es  fo     fr-ca  hu  ja  mk     no  pt-br  sv[m
+                   da  en-gb  et  fr     fr-ch  is  lt  nl     pl  ru     th[m
+                   de  en-us  fi  fr-be  hr     it  lv  nl-be  pt  sl     tr[m
+[m
+           The default is "en-us".[m
+[m
+       [1m-audio-help[0m[m
+           Will show the audio subsystem help: list of drivers, tunable parameters.[m
+[m
+       [1m-soundhw[0m [4mcard1[24m[1m[,[0m[4mcard2[24m[1m,...][0m [1mor[0m [1m-soundhw[0m [1mall[0m[m
+           Enable audio and selected sound hardware. Use 'help' to print all available sound hardware.[m
+[m
+                   qemu-system-i386 -soundhw sb16,adlib disk.img[m
+                   qemu-system-i386 -soundhw es1370 disk.img[m
+                   qemu-system-i386 -soundhw ac97 disk.img[m
+                   qemu-system-i386 -soundhw hda disk.img[m
+                   qemu-system-i386 -soundhw all disk.img[m
+[7m Manual page qemu(1) line 159 (press h for help or q to quit)[27m[K[K                   qemu-system-i386 -soundhw help[m
+[m
+           Note that Linux's i810_audio OSS kernel (for AC97) module might require manually specifying clocking.[m
+[m
+                   modprobe i810_audio clocking=48000[m
+[m
+       [1m-balloon[0m [1mnone[0m[m
+           Disable balloon device.[m
+[m
+       [1m-balloon[0m [1mvirtio[,addr=[0m[4maddr[24m[1m][0m[m
+           Enable virtio balloon device (default), optionally with PCI address [4maddr[24m.[m
+[m
+       [1m-device[0m [4mdriver[24m[1m[,[0m[4mprop[24m[1m[=[0m[4mvalue[24m[1m][,...]][0m[m
+           Add device [4mdriver[24m.  [4mprop[24m=[4mvalue[24m sets driver properties.  Valid properties depend on the driver.  To get help on possible drivers and[m
+           properties, use "-device help" and "-device [4mdriver,help"[24m.[m
+[m
+       [1m-name[0m [4mname[24m[m
+           Sets the [4mname[24m of the guest.  This name will be displayed in the SDL window caption.  The [4mname[24m will also be used for the VNC server.[m
+           Also optionally set the top visible process name in Linux.  Naming of individual threads can also be enabled on Linux to aid[m
+           debugging.[m
+[m
+       [1m-uuid[0m [4muuid[24m[m
+           Set system UUID.[m
+[m
+       Block device options:[m
+[m
+       [1m-fda[0m [4mfile[24m[m
+       [1m-fdb[0m [4mfile[24m[m
+           Use [4mfile[24m as floppy disk 0/1 image. You can use the host floppy by using [4m/dev/fd0[24m as filename.[m
+[m
+       [1m-hda[0m [4mfile[24m[m
+       [1m-hdb[0m [4mfile[24m[m
+       [1m-hdc[0m [4mfile[24m[m
+       [1m-hdd[0m [4mfile[24m[m
+           Use [4mfile[24m as hard disk 0, 1, 2 or 3 image.[m
+[m
+       [1m-cdrom[0m [4mfile[24m[m
+           Use [4mfile[24m as CD-ROM image (you cannot use [1m-hdc[0m and [1m-cdrom[0m at the same time). You can use the host CD-ROM by using [4m/dev/cdrom[24m as[m
+           filename.[m
+[7m Manual page qemu(1) line 198 (press h for help or q to quit)[27m[K[K[m
+       [1m-drive[0m [4moption[24m[1m[,[0m[4moption[24m[1m[,[0m[4moption[24m[1m[,...]]][0m[m
+           Define a new drive. Valid options are:[m
+[m
+           [1mfile=[0m[4mfile[24m[m
+               This option defines which disk image to use with this drive. If the filename contains comma, you must double it (for instance,[m
+               "file=my,,file" to use file "my,file").[m
+[m
+               Special files such as iSCSI devices can be specified using protocol specific URLs. See the section for "Device URL Syntax" for[m
+               more information.[m
+[m
+           [1mif=[0m[4minterface[24m[m
+               This option defines on which type on interface the drive is connected.  Available types are: ide, scsi, sd, mtd, floppy, pflash,[m
+               virtio.[m
+[m
+           [1mbus=[0m[4mbus[24m[1m,unit=[0m[4munit[24m[m
+               These options define where is connected the drive by defining the bus number and the unit id.[m
+[m
+           [1mindex=[0m[4mindex[24m[m
+               This option defines where is connected the drive by using an index in the list of available connectors of a given interface[m
+               type.[m
+[m
+           [1mmedia=[0m[4mmedia[24m[m
+               This option defines the type of the media: disk or cdrom.[m
+[m
+           [1mcyls=[0m[4mc[24m[1m,heads=[0m[4mh[24m[1m,secs=[0m[4ms[24m[1m[,trans=[0m[4mt[24m[1m][0m[m
+               These options have the same definition as they have in [1m-hdachs[0m.[m
+[m
+           [1msnapshot=[0m[4msnapshot[24m[m
+               [4msnapshot[24m is "on" or "off" and controls snapshot mode for the given drive (see [1m-snapshot[0m).[m
+[m
+           [1mcache=[0m[4mcache[24m[m
+               [4mcache[24m is "none", "writeback", "unsafe", "directsync" or "writethrough" and controls how the host cache is used to access block[m
+               data.[m
+[m
+           [1maio=[0m[4maio[24m[m
+               [4maio[24m is "threads", or "native" and selects between pthread based disk I/O and native Linux AIO.[m
+[m
+           [1mdiscard=[0m[4mdiscard[24m[m
+[7m Manual page qemu(1) line 237 (press h for help or q to quit)[27m[K[K               [4mdiscard[24m is one of "ignore" (or "off") or "unmap" (or "on") and controls whether [4mdiscard[24m (also known as [4mtrim[24m or [4munmap[24m) requests[m
+               are ignored or passed to the filesystem.  Some machine types may not support discard requests.[m
+[m
+           [1mformat=[0m[4mformat[24m[m
+               Specify which disk [4mformat[24m will be used rather than detecting the format.  Can be used to specifiy format=raw to avoid[m
+               interpreting an untrusted format header.[m
+[m
+           [1mserial=[0m[4mserial[24m[m
+               This option specifies the serial number to assign to the device.[m
+[m
+           [1maddr=[0m[4maddr[24m[m
+               Specify the controller's PCI address (if=virtio only).[m
+[m
+           [1mwerror=[0m[4maction[24m[1m,rerror=[0m[4maction[24m[m
+               Specify which [4maction[24m to take on write and read errors. Valid actions are: "ignore" (ignore the error and try to continue),[m
+               "stop" (pause QEMU), "report" (report the error to the guest), "enospc" (pause QEMU only if the host disk is full; report the[m
+               error to the guest otherwise).  The default setting is [1mwerror=enospc[0m and [1mrerror=report[0m.[m
+[m
+           [1mreadonly[0m[m
+               Open drive [1mfile[0m as read-only. Guest write attempts will fail.[m
+[m
+           [1mcopy-on-read=[0m[4mcopy-on-read[24m[m
+               [4mcopy-on-read[24m is "on" or "off" and enables whether to copy read backing file sectors into the image file.[m
+[m
+           By default, the [1mcache=writeback[0m mode is used. It will report data writes as completed as soon as the data is present in the host[m
+           page cache.  This is safe as long as your guest OS makes sure to correctly flush disk caches where needed. If your guest OS does not[m
+           handle volatile disk write caches correctly and your host crashes or loses power, then the guest may experience data corruption.[m
+[m
+           For such guests, you should consider using [1mcache=writethrough[0m. This means that the host page cache will be used to read and write[m
+           data, but write notification will be sent to the guest only after QEMU has made sure to flush each write to the disk. Be aware that[m
+           this has a major impact on performance.[m
+[m
+           The host page cache can be avoided entirely with [1mcache=none[0m.  This will attempt to do disk IO directly to the guest's memory.  QEMU[m
+           may still perform an internal copy of the data. Note that this is considered a writeback mode and the guest OS must handle the disk[m
+           write cache correctly in order to avoid data corruption on host crashes.[m
+[m
+           The host page cache can be avoided while only sending write notifications to the guest when the data has been flushed to the disk[m
+           using [1mcache=directsync[0m.[m
+[m
+[7m Manual page qemu(1) line 276 (press h for help or q to quit)[27m[K[K           In case you don't care about data integrity over host failures, use [1mcache=unsafe[0m. This option tells QEMU that it never needs to[m
+           write any data to the disk but can instead keep things in cache. If anything goes wrong, like your host losing power, the disk[m
+           storage getting disconnected accidentally, etc. your image will most probably be rendered unusable.   When using the [1m-snapshot[0m[m
+           option, unsafe caching is always used.[m
+[m
+           Copy-on-read avoids accessing the same backing file sectors repeatedly and is useful when the backing file is over a slow network.[m
+           By default copy-on-read is off.[m
+[m
+           Instead of [1m-cdrom[0m you can use:[m
+[m
+                   qemu-system-i386 -drive file=file,index=2,media=cdrom[m
+[m
+           Instead of [1m-hda[0m, [1m-hdb[0m, [1m-hdc[0m, [1m-hdd[0m, you can use:[m
+[m
+                   qemu-system-i386 -drive file=file,index=0,media=disk[m
+                   qemu-system-i386 -drive file=file,index=1,media=disk[m
+                   qemu-system-i386 -drive file=file,index=2,media=disk[m
+                   qemu-system-i386 -drive file=file,index=3,media=disk[m
+[m
+           You can open an image using pre-opened file descriptors from an fd set:[m
+[m
+                   qemu-system-i386[m
+                   -add-fd fd=3,set=2,opaque="rdwr:/path/to/file"[m
+                   -add-fd fd=4,set=2,opaque="rdonly:/path/to/file"[m
+                   -drive file=/dev/fdset/2,index=0,media=disk[m
+[m
+           You can connect a CDROM to the slave of ide0:[m
+[m
+                   qemu-system-i386 -drive file=file,if=ide,index=1,media=cdrom[m
+[m
+           If you don't specify the "file=" argument, you define an empty drive:[m
+[m
+                   qemu-system-i386 -drive if=ide,index=1,media=cdrom[m
+[m
+           You can connect a SCSI disk with unit ID 6 on the bus #0:[m
+[m
+                   qemu-system-i386 -drive file=file,if=scsi,bus=0,unit=6[m
+[m
+           Instead of [1m-fda[0m, [1m-fdb[0m, you can use:[m
+[7m Manual page qemu(1) line 315 (press h for help or q to quit)[27m[K[K[m
+                   qemu-system-i386 -drive file=file,index=0,if=floppy[m
+                   qemu-system-i386 -drive file=file,index=1,if=floppy[m
+[m
+           By default, [4minterface[24m is "ide" and [4mindex[24m is automatically incremented:[m
+[m
+                   qemu-system-i386 -drive file=a -drive file=b"[m
+[m
+           is interpreted like:[m
+[m
+                   qemu-system-i386 -hda a -hdb b[m
+[m
+       [1m-mtdblock[0m [4mfile[24m[m
+           Use [4mfile[24m as on-board Flash memory image.[m
+[m
+       [1m-sd[0m [4mfile[24m[m
+           Use [4mfile[24m as SecureDigital card image.[m
+[m
+       [1m-pflash[0m [4mfile[24m[m
+           Use [4mfile[24m as a parallel flash image.[m
+[m
+       [1m-snapshot[0m[m
+           Write to temporary files instead of disk image files. In this case, the raw disk image you use is not written back. You can however[m
+           force the write back by pressing [1mC-a[0m [1ms[0m.[m
+[m
+       [1m-hdachs[0m [4mc[24m[1m,[0m[4mh[24m[1m,[0m[4ms[24m[1m,[,[0m[4mt[24m[1m][0m[m
+           Force hard disk 0 physical geometry (1 <= [4mc[24m <= 16383, 1 <= [4mh[24m <= 16, 1 <= [4ms[24m <= 63) and optionally force the BIOS translation mode[m
+           ([4mt[24m=none, lba or auto). Usually QEMU can guess all those parameters. This option is useful for old MS-DOS disk images.[m
+[m
+       [1m-fsdev[0m [4mfsdriver[24m[1m,id=[0m[4mid[24m[1m,path=[0m[4mpath[24m[1m,[security_model=[0m[4msecurity_model[24m[1m][,writeout=[0m[4mwriteout[24m[1m][,readonly][,socket=[0m[4msocket[24m[1m|sock_fd=[0m[4msock_fd[24m[1m][0m[m
+           Define a new file system device. Valid options are:[m
+[m
+           [4mfsdriver[24m[m
+               This option specifies the fs driver backend to use.  Currently "local", "handle" and "proxy" file system drivers are supported.[m
+[m
+           [1mid=[0m[4mid[24m[m
+               Specifies identifier for this device[m
+[m
+           [1mpath=[0m[4mpath[24m[m
+[7m Manual page qemu(1) line 354 (press h for help or q to quit)[27m[K[K               Specifies the export path for the file system device. Files under this path will be available to the 9p client on the guest.[m
+[m
+           [1msecurity_model=[0m[4msecurity_model[24m[m
+               Specifies the security model to be used for this export path.  Supported security models are "passthrough", "mapped-xattr",[m
+               "mapped-file" and "none".  In "passthrough" security model, files are stored using the same credentials as they are created on[m
+               the guest. This requires QEMU to run as root. In "mapped-xattr" security model, some of the file attributes like uid, gid, mode[m
+               bits and link target are stored as file attributes. For "mapped-file" these attributes are stored in the hidden .virtfs_metadata[m
+               directory. Directories exported by this security model cannot interact with other unix tools. "none" security model is same as[m
+               passthrough except the sever won't report failures if it fails to set file attributes like ownership. Security model is[m
+               mandatory only for local fsdriver. Other fsdrivers (like handle, proxy) don't take security model as a parameter.[m
+[m
+           [1mwriteout=[0m[4mwriteout[24m[m
+               This is an optional argument. The only supported value is "immediate".  This means that host page cache will be used to read and[m
+               write data but write notification will be sent to the guest only when the data has been reported as written by the storage[m
+               subsystem.[m
+[m
+           [1mreadonly[0m[m
+               Enables exporting 9p share as a readonly mount for guests. By default read-write access is given.[m
+[m
+           [1msocket=[0m[4msocket[24m[m
+               Enables proxy filesystem driver to use passed socket file for communicating with virtfs-proxy-helper[m
+[m
+           [1msock_fd=[0m[4msock_fd[24m[m
+               Enables proxy filesystem driver to use passed socket descriptor for communicating with virtfs-proxy-helper. Usually a helper[m
+               like libvirt will create socketpair and pass one of the fds as sock_fd[m
+[m
+           -fsdev option is used along with -device driver "virtio-9p-pci".[m
+[m
+       [1m-device[0m [1mvirtio-9p-pci,fsdev=[0m[4mid[24m[1m,mount_tag=[0m[4mmount_tag[24m[m
+           Options for virtio-9p-pci driver are:[m
+[m
+           [1mfsdev=[0m[4mid[24m[m
+               Specifies the id value specified along with -fsdev option[m
+[m
+           [1mmount_tag=[0m[4mmount_tag[24m[m
+               Specifies the tag name to be used by the guest to mount this export point[m
+[m
+       [1m-virtfs[0m[m
+       [4mfsdriver[24m[1m[,path=[0m[4mpath[24m[1m],mount_tag=[0m[4mmount_tag[24m[1m[,security_model=[0m[4msecurity_model[24m[1m][,writeout=[0m[4mwriteout[24m[1m][,readonly][,socket=[0m[4msocket[24m[1m|sock_fd=[0m[4msock_fd[24m[1m][0m[m
+[7m Manual page qemu(1) line 393 (press h for help or q to quit)[27m[K[K           The general form of a Virtual File system pass-through options are:[m
+[m
+           [4mfsdriver[24m[m
+               This option specifies the fs driver backend to use.  Currently "local", "handle" and "proxy" file system drivers are supported.[m
+[m
+           [1mid=[0m[4mid[24m[m
+               Specifies identifier for this device[m
+[m
+           [1mpath=[0m[4mpath[24m[m
+               Specifies the export path for the file system device. Files under this path will be available to the 9p client on the guest.[m
+[m
+           [1msecurity_model=[0m[4msecurity_model[24m[m
+               Specifies the security model to be used for this export path.  Supported security models are "passthrough", "mapped-xattr",[m
+               "mapped-file" and "none".  In "passthrough" security model, files are stored using the same credentials as they are created on[m
+               the guest. This requires QEMU to run as root. In "mapped-xattr" security model, some of the file attributes like uid, gid, mode[m
+               bits and link target are stored as file attributes. For "mapped-file" these attributes are stored in the hidden .virtfs_metadata[m
+               directory. Directories exported by this security model cannot interact with other unix tools. "none" security model is same as[m
+               passthrough except the sever won't report failures if it fails to set file attributes like ownership. Security model is[m
+               mandatory only for local fsdriver. Other fsdrivers (like handle, proxy) don't take security model as a parameter.[m
+[m
+           [1mwriteout=[0m[4mwriteout[24m[m
+               This is an optional argument. The only supported value is "immediate".  This means that host page cache will be used to read and[m
+               write data but write notification will be sent to the guest only when the data has been reported as written by the storage[m
+               subsystem.[m
+[m
+           [1mreadonly[0m[m
+               Enables exporting 9p share as a readonly mount for guests. By default read-write access is given.[m
+[m
+           [1msocket=[0m[4msocket[24m[m
+               Enables proxy filesystem driver to use passed socket file for communicating with virtfs-proxy-helper. Usually a helper like[m
+               libvirt will create socketpair and pass one of the fds as sock_fd[m
+[m
+           [1msock_fd[0m[m
+               Enables proxy filesystem driver to use passed 'sock_fd' as the socket descriptor for interfacing with virtfs-proxy-helper[m
+[m
+       [1m-virtfs_synth[0m[m
+           Create synthetic file system image[m
+[m
+       USB options:[m
+[7m Manual page qemu(1) line 432 (press h for help or q to quit)[27m[K[K[m
+       [1m-usb[0m[m
+           Enable the USB driver (will be the default soon)[m
+[m
+       [1m-usbdevice[0m [4mdevname[24m[m
+           Add the USB device [4mdevname[24m.[m
+[m
+           [1mmouse[0m[m
+               Virtual Mouse. This will override the PS/2 mouse emulation when activated.[m
+[m
+           [1mtablet[0m[m
+               Pointer device that uses absolute coordinates (like a touchscreen). This means QEMU is able to report the mouse position without[m
+               having to grab the mouse. Also overrides the PS/2 mouse emulation when activated.[m
+[m
+           [1mdisk:[format=[0m[4mformat[24m[1m]:[0m[4mfile[24m[m
+               Mass storage device based on file. The optional [4mformat[24m argument will be used rather than detecting the format. Can be used to[m
+               specifiy "format=raw" to avoid interpreting an untrusted format header.[m
+[m
+           [1mhost:[0m[4mbus[24m[1m.[0m[4maddr[24m[m
+               Pass through the host device identified by [4mbus[24m.[4maddr[24m (Linux only).[m
+[m
+           [1mhost:[0m[4mvendor_id[24m[1m:[0m[4mproduct_id[24m[m
+               Pass through the host device identified by [4mvendor_id[24m:[4mproduct_id[24m (Linux only).[m
+[m
+           [1mserial:[vendorid=[0m[4mvendor_id[24m[1m][,productid=[0m[4mproduct_id[24m[1m]:[0m[4mdev[24m[m
+               Serial converter to host character device [4mdev[24m, see "-serial" for the available devices.[m
+[m
+           [1mbraille[0m[m
+               Braille device.  This will use BrlAPI to display the braille output on a real or fake device.[m
+[m
+           [1mnet:[0m[4moptions[24m[m
+               Network adapter that supports CDC ethernet and RNDIS protocols.[m
+[m
+       Display options:[m
+[m
+       [1m-display[0m [4mtype[24m[m
+           Select type of display to use. This option is a replacement for the old style -sdl/-curses/... options. Valid values for [4mtype[24m are[m
+[m
+           [1msdl[0m Display video output via SDL (usually in a separate graphics window; see the SDL documentation for other possibilities).[m
+[7m Manual page qemu(1) line 471 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 472 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mcurses[0m[m
+[7m Manual page qemu(1) line 473 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Display video output via curses. For graphics device models which support a text mode, QEMU can display this output using a[m
+[7m Manual page qemu(1) line 474 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               curses/ncurses interface. Nothing is displayed when the graphics device is in graphical mode or if the graphics device does not[m
+[7m Manual page qemu(1) line 475 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               support a text mode. Generally only the VGA device models support text mode.[m
+[7m Manual page qemu(1) line 476 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 477 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mnone[0m[m
+[7m Manual page qemu(1) line 478 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Do not display video output. The guest will still see an emulated graphics card, but its output will not be displayed to the[m
+[7m Manual page qemu(1) line 479 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               QEMU user. This option differs from the -nographic option in that it only affects what is done with video output; -nographic[m
+[7m Manual page qemu(1) line 480 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               also changes the destination of the serial and parallel port data.[m
+[7m Manual page qemu(1) line 481 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 482 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mgtk[0m Display video output in a GTK window. This interface provides drop-down menus and other UI elements to configure and control the[m
+[7m Manual page qemu(1) line 483 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               VM during runtime.[m
+[7m Manual page qemu(1) line 484 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 485 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mvnc[0m Start a VNC server on display <arg>[m
+[7m Manual page qemu(1) line 486 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 487 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-nographic[0m[m
+[7m Manual page qemu(1) line 488 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Normally, QEMU uses SDL to display the VGA output. With this option, you can totally disable graphical output so that QEMU is a[m
+[7m Manual page qemu(1) line 489 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           simple command line application. The emulated serial port is redirected on the console and muxed with the monitor (unless redirected[m
+[7m Manual page qemu(1) line 490 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           elsewhere explicitly). Therefore, you can still use QEMU to debug a Linux kernel with a serial console.  Use [1mC-a[0m [1mh[0m for help on[m
+[7m Manual page qemu(1) line 491 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           switching between the console and monitor.[m
+[7m Manual page qemu(1) line 492 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 493 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-curses[0m[m
+[7m Manual page qemu(1) line 494 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Normally, QEMU uses SDL to display the VGA output.  With this option, QEMU can display the VGA output when in text mode using a[m
+[7m Manual page qemu(1) line 495 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           curses/ncurses interface.  Nothing is displayed in graphical mode.[m
+[7m Manual page qemu(1) line 496 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 497 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-no-frame[0m[m
+[7m Manual page qemu(1) line 498 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Do not use decorations for SDL windows and start them using the whole available screen space. This makes the using QEMU in a[m
+[7m Manual page qemu(1) line 499 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           dedicated desktop workspace more convenient.[m
+[7m Manual page qemu(1) line 500 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 501 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-alt-grab[0m[m
+[7m Manual page qemu(1) line 502 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Use Ctrl-Alt-Shift to grab mouse (instead of Ctrl-Alt). Note that this also affects the special keys (for fullscreen, monitor-mode[m
+[7m Manual page qemu(1) line 503 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           switching, etc).[m
+[7m Manual page qemu(1) line 504 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 505 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-ctrl-grab[0m[m
+[7m Manual page qemu(1) line 506 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Use Right-Ctrl to grab mouse (instead of Ctrl-Alt). Note that this also affects the special keys (for fullscreen, monitor-mode[m
+[7m Manual page qemu(1) line 507 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           switching, etc).[m
+[7m Manual page qemu(1) line 508 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 509 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-no-quit[0m[m
+[7m Manual page qemu(1) line 510 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Disable SDL window close capability.[m
+[7m Manual page qemu(1) line 511 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 512 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-sdl[0m[m
+[7m Manual page qemu(1) line 513 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Enable SDL.[m
+[7m Manual page qemu(1) line 514 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 515 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-spice[0m [4moption[24m[1m[,[0m[4moption[24m[1m[,...]][0m[m
+[7m Manual page qemu(1) line 516 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Enable the spice remote desktop protocol. Valid options are[m
+[7m Manual page qemu(1) line 517 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 518 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mport=<nr>[0m[m
+[7m Manual page qemu(1) line 519 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Set the TCP port spice is listening on for plaintext channels.[m
+[7m Manual page qemu(1) line 520 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 521 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1maddr=<addr>[0m[m
+[7m Manual page qemu(1) line 522 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Set the IP address spice is listening on.  Default is any address.[m
+[7m Manual page qemu(1) line 523 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 524 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mipv4[0m[m
+[7m Manual page qemu(1) line 525 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mipv6[0m[m
+[7m Manual page qemu(1) line 526 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Force using the specified IP version.[m
+[7m Manual page qemu(1) line 527 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 528 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mpassword=<secret>[0m[m
+[7m Manual page qemu(1) line 529 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Set the password you need to authenticate.[m
+[7m Manual page qemu(1) line 530 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 531 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1msasl[0m[m
+[7m Manual page qemu(1) line 532 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Require that the client use SASL to authenticate with the spice.  The exact choice of authentication method used is controlled[m
+[7m Manual page qemu(1) line 533 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               from the system / user's SASL configuration file for the 'qemu' service. This is typically found in /etc/sasl2/qemu.conf. If[m
+[7m Manual page qemu(1) line 534 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               running QEMU as an unprivileged user, an environment variable SASL_CONF_PATH can be used to make it search alternate locations[m
+[7m Manual page qemu(1) line 535 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               for the service config.  While some SASL auth methods can also provide data encryption (eg GSSAPI), it is recommended that SASL[m
+[7m Manual page qemu(1) line 536 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               always be combined with the 'tls' and 'x509' settings to enable use of SSL and server certificates. This ensures a data[m
+[7m Manual page qemu(1) line 537 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               encryption preventing compromise of authentication credentials.[m
+[7m Manual page qemu(1) line 538 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 539 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mdisable-ticketing[0m[m
+[7m Manual page qemu(1) line 540 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Allow client connects without authentication.[m
+[7m Manual page qemu(1) line 541 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 542 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mdisable-copy-paste[0m[m
+[7m Manual page qemu(1) line 543 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Disable copy paste between the client and the guest.[m
+[7m Manual page qemu(1) line 544 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 545 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mdisable-agent-file-xfer[0m[m
+[7m Manual page qemu(1) line 546 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Disable spice-vdagent based file-xfer between the client and the guest.[m
+[7m Manual page qemu(1) line 547 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 548 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mtls-port=<nr>[0m[m
+[7m Manual page qemu(1) line 549 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Set the TCP port spice is listening on for encrypted channels.[m
+[7m Manual page qemu(1) line 550 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 551 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mx509-dir=<dir>[0m[m
+[7m Manual page qemu(1) line 552 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Set the x509 file directory. Expects same filenames as -vnc $display,x509=$dir[m
+[7m Manual page qemu(1) line 553 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 554 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mx509-key-file=<file>[0m[m
+[7m Manual page qemu(1) line 555 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mx509-key-password=<file>[0m[m
+[7m Manual page qemu(1) line 556 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mx509-cert-file=<file>[0m[m
+[7m Manual page qemu(1) line 557 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mx509-cacert-file=<file>[0m[m
+[7m Manual page qemu(1) line 558 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mx509-dh-key-file=<file>[0m[m
+[7m Manual page qemu(1) line 559 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               The x509 file names can also be configured individually.[m
+[7m Manual page qemu(1) line 560 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 561 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mtls-ciphers=<list>[0m[m
+[7m Manual page qemu(1) line 562 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Specify which ciphers to use.[m
+[7m Manual page qemu(1) line 563 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 564 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mtls-channel=[main|display|cursor|inputs|record|playback][0m[m
+[7m Manual page qemu(1) line 565 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mplaintext-channel=[main|display|cursor|inputs|record|playback][0m[m
+[7m Manual page qemu(1) line 566 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Force specific channel to be used with or without TLS encryption.  The options can be specified multiple times to configure[m
+[7m Manual page qemu(1) line 567 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               multiple channels.  The special name "default" can be used to set the default mode.  For channels which are not explicitly[m
+[7m Manual page qemu(1) line 568 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               forced into one mode the spice client is allowed to pick tls/plaintext as he pleases.[m
+[7m Manual page qemu(1) line 569 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 570 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mimage-compression=[auto_glz|auto_lz|quic|glz|lz|off][0m[m
+[7m Manual page qemu(1) line 571 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Configure image compression (lossless).  Default is auto_glz.[m
+[7m Manual page qemu(1) line 572 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 573 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mjpeg-wan-compression=[auto|never|always][0m[m
+[7m Manual page qemu(1) line 574 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mzlib-glz-wan-compression=[auto|never|always][0m[m
+[7m Manual page qemu(1) line 575 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Configure wan image compression (lossy for slow links).  Default is auto.[m
+[7m Manual page qemu(1) line 576 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 577 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mstreaming-video=[off|all|filter][0m[m
+[7m Manual page qemu(1) line 578 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Configure video stream detection.  Default is filter.[m
+[7m Manual page qemu(1) line 579 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 580 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1magent-mouse=[on|off][0m[m
+[7m Manual page qemu(1) line 581 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Enable/disable passing mouse events via vdagent.  Default is on.[m
+[7m Manual page qemu(1) line 582 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 583 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mplayback-compression=[on|off][0m[m
+[7m Manual page qemu(1) line 584 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Enable/disable audio stream compression (using celt 0.5.1).  Default is on.[m
+[7m Manual page qemu(1) line 585 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 586 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mseamless-migration=[on|off][0m[m
+[7m Manual page qemu(1) line 587 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Enable/disable spice seamless migration. Default is off.[m
+[7m Manual page qemu(1) line 588 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 589 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-portrait[0m[m
+[7m Manual page qemu(1) line 590 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Rotate graphical output 90 deg left (only PXA LCD).[m
+[7m Manual page qemu(1) line 591 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 592 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-rotate[0m [4mdeg[24m[m
+[7m Manual page qemu(1) line 593 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Rotate graphical output some deg left (only PXA LCD).[m
+[7m Manual page qemu(1) line 594 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 595 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-vga[0m [4mtype[24m[m
+[7m Manual page qemu(1) line 596 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           Select type of VGA card to emulate. Valid values for [4mtype[24m are[m
+[7m Manual page qemu(1) line 597 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 598 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mcirrus[0m[m
+[7m Manual page qemu(1) line 599 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               Cirrus Logic GD5446 Video card. All Windows versions starting from Windows 95 should recognize and use this graphic card. For[m
+[7m Manual page qemu(1) line 600 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               optimal performances, use 16 bit color depth in the guest and the host OS.  (This one is the default)[m
+[7m Manual page qemu(1) line 601 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 602 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mstd[0m Standard VGA card with Bochs VBE extensions.  If your guest OS supports the VESA 2.0 VBE extensions (e.g. Windows XP) and if you[m
+[7m Manual page qemu(1) line 603 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               want to use high resolution modes (>= 1280x1024x16) then you should use this option.[m
+[7m Manual page qemu(1) line 604 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 605 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mvmware[0m[m
+[7m Manual page qemu(1) line 606 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               VMWare SVGA-II compatible adapter. Use it if you have sufficiently recent XFree86/XOrg server or Windows guest with a driver for[m
+[7m Manual page qemu(1) line 607 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               this card.[m
+[7m Manual page qemu(1) line 608 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 609 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mqxl[0m QXL paravirtual graphic card.  It is VGA compatible (including VESA 2.0 VBE support).  Works best with qxl guest drivers[m
+[7m Manual page qemu(1) line 610 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               installed though.  Recommended choice when using the spice protocol.[m
+[7m Manual page qemu(1) line 611 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page qemu(1) line 612 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           [1mtcx[0m (sun4m only) Sun TCX framebuffer. This is the default framebuffer for sun4m machines and offers both 8-bit and 24-bit colour[m
+[7m Manual page qemu(1) line 613 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K               depths at a fixed resolution of 1024x768.[m
+[7m Manual page qemu(1) line 614 (press h for help or q to quit)[27m[K[K[?1l>[?1049l]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ vnc3[K4server
+The program 'vnc4server' is currently not installed. You can install it by typing:
+sudo apt-get install vnc4server
+]0;ubuntu@zangrui-node: ~/job_wyl/devstackubuntu@zangrui-node:~/job_wyl/devstack$ sudo apt-get install vnc4server
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following extra packages will be installed:
+  libfontenc1 libfs6 libgl1-mesa-glx libglapi-mesa libx11-xcb1 libxaw7
+  libxcb-dri2-0 libxcb-dri3-0 libxcb-glx0 libxcb-present0 libxcb-shape0
+  libxcb-sync1 libxkbfile1 libxmu6 libxpm4 libxshmfence1 libxtst6 libxv1
+  libxxf86dga1 libxxf86vm1 x11-apps x11-session-utils x11-utils x11-xfs-utils
+  x11-xkb-utils x11-xserver-utils xbase-clients
+Suggested packages:
+  vnc-java mesa-utils nickle cairo-5c xorg-docs-core
+Recommended packages:
+  libgl1-mesa-dri xfonts-base xbitmaps
+The following NEW packages will be installed:
+  libfontenc1 libfs6 libgl1-mesa-glx libglapi-mesa libx11-xcb1 libxaw7
+  libxcb-dri2-0 libxcb-dri3-0 libxcb-glx0 libxcb-present0 libxcb-shape0
+  libxcb-sync1 libxkbfile1 libxmu6 libxpm4 libxshmfence1 libxtst6 libxv1
+  libxxf86dga1 libxxf86vm1 vnc4server x11-apps x11-session-utils x11-utils
+  x11-xfs-utils x11-xkb-utils x11-xserver-utils xbase-clients
+0 upgraded, 28 newly installed, 0 to remove and 3 not upgraded.
+Need to get 3,442 kB of archives.
+After this operation, 12.3 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+0% [Working]            0% [Waiting for headers]                        Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main libfontenc1 amd64 1:1.1.2-1 [15.6 kB]
+                        0% [1 libfontenc1 3,697 B/15.6 kB 24%]                                      0% [Working]            Get:2 http://archive.ubuntu.com/ubuntu/ trusty/main libfs6 amd64 2:1.0.5-1 [25.9 kB]
+            1% [2 libfs6 3,697 B/25.9 kB 14%]                                 1% [Working]            Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libglapi-mesa amd64 10.1.3-0ubuntu0.3 [21.0 kB]
+            1% [3 libglapi-mesa 2,490 B/21.0 kB 12%]                                        2% [Working]            Get:4 http://archive.ubuntu.com/ubuntu/ trusty/main libx11-xcb1 amd64 2:1.6.2-1ubuntu2 [9,426 B]
+            2% [4 libx11-xcb1 1,599 B/9,426 B 17%]                                      2% [Working]            Get:5 http://archive.ubuntu.com/ubuntu/ trusty/main libxcb-dri2-0 amd64 1.10-2ubuntu1 [6,710 B]
+            2% [5 libxcb-dri2-0 2,350 B/6,710 B 35%]                                        2% [Working]            Get:6 http://archive.ubuntu.com/ubuntu/ trusty/main libxcb-dri3-0 amd64 1.10-2ubuntu1 [5,118 B]
+            2% [6 libxcb-dri3-0 3,698 B/5,118 B 72%]                                        2% [Working]            Get:7 http://archive.ubuntu.com/ubuntu/ trusty/main libxcb-glx0 amd64 1.10-2ubuntu1 [20.0 kB]
+            3% [7 libxcb-glx0 3,697 B/20.0 kB 19%]                                      3% [Working]            Get:8 http://archive.ubuntu.com/ubuntu/ trusty/main libxcb-present0 amd64 1.10-2ubuntu1 [5,254 B]
+            3% [8 libxcb-present0 3,698 B/5,254 B 70%]                                          3% [Working]            Get:9 http://archive.ubuntu.com/ubuntu/ trusty/main libxcb-sync1 amd64 1.10-2ubuntu1 [8,090 B]
+            3% [9 libxcb-sync1 2,491 B/8,090 B 31%]                                       3% [Working]            Get:10 http://archive.ubuntu.com/ubuntu/ trusty/main libxshmfence1 amd64 1.1-2 [4,644 B]
+            4% [10 libxshmfence1 3,698 B/4,644 B 80%]                                         4% [Working]            Get:11 http://archive.ubuntu.com/ubuntu/ trusty/main libxxf86vm1 amd64 1:1.1.3-1 [11.7 kB]
+            4% [11 libxxf86vm1 2,349 B/11.7 kB 20%]                                       4% [Working]            Get:12 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libgl1-mesa-glx amd64 10.1.3-0ubuntu0.3 [114 kB]
+            4% [12 libgl1-mesa-glx 2,347 B/114 kB 2%]                                         7% [Working]            Get:13 http://archive.ubuntu.com/ubuntu/ trusty/main libxmu6 amd64 2:1.1.1-1 [53.8 kB]
+            7% [13 libxmu6 2,349 B/53.8 kB 4%]                                  8% [13 libxmu6 32.3 kB/53.8 kB 60%]8% [13 libxmu6 39.1 kB/53.8 kB 73%]                                   9% [Working]            Get:14 http://archive.ubuntu.com/ubuntu/ trusty/main libxpm4 amd64 1:3.5.10-1 [38.3 kB]
+            9% [14 libxpm4 2,349 B/38.3 kB 6%]                            48.6 kB/s 1min 4s10% [Working]                                                 48.6 kB/s 1min 3s                                                                               Get:15 http://archive.ubuntu.com/ubuntu/ trusty/main libxaw7 amd64 2:1.0.12-1 [168 kB]
+10% [15 libxaw7 999 B/168 kB 1%]                              48.6 kB/s 1min 3s14% [15 libxaw7 132 kB/168 kB 78%]                            48.6 kB/s 1min 1s15% [Working]                                                     48.6 kB/s 60s                                                                               Get:16 http://archive.ubuntu.com/ubuntu/ trusty/main libxcb-shape0 amd64 1.10-2ubuntu1 [5,654 B]
+15% [16 libxcb-shape0 3,698 B/5,654 B 65%]                        48.6 kB/s 60s15% [Working]                                                     48.6 kB/s 60s                                                                               Get:17 http://archive.ubuntu.com/ubuntu/ trusty/main libxkbfile1 amd64 1:1.0.8-1 [74.2 kB]
+15% [17 libxkbfile1 3,696 B/74.2 kB 5%]                           48.6 kB/s 60s17% [Working]                                                     48.6 kB/s 58s                                                                               Get:18 http://archive.ubuntu.com/ubuntu/ trusty/main libxtst6 amd64 2:1.2.2-1 [14.1 kB]
+17% [18 libxtst6 2,490 B/14.1 kB 18%]                             48.6 kB/s 58s17% [Working]                                                     48.6 kB/s 58s                                                                               Get:19 http://archive.ubuntu.com/ubuntu/ trusty/main libxv1 amd64 2:1.0.10-1 [10.3 kB]
+18% [19 libxv1 3,838 B/10.3 kB 37%]                               48.6 kB/s 58s18% [Working]                                                     48.6 kB/s 58s                                                                               Get:20 http://archive.ubuntu.com/ubuntu/ trusty/main libxxf86dga1 amd64 2:1.1.4-1 [13.7 kB]
+18% [20 libxxf86dga1 3,697 B/13.7 kB 27%]                         48.6 kB/s 58s18% [Working]                                                     48.6 kB/s 57s                                                                               Get:21 http://archive.ubuntu.com/ubuntu/ trusty/main x11-apps amd64 7.7+2 [610 kB]
+18% [21 x11-apps 4,036 B/610 kB 1%]                               48.6 kB/s 57s23% [21 x11-apps 181 kB/610 kB 30%]                               48.6 kB/s 54s27% [21 x11-apps 290 kB/610 kB 47%]                               48.6 kB/s 51s28% [21 x11-apps 348 kB/610 kB 57%]                               48.6 kB/s 50s29% [21 x11-apps 386 kB/610 kB 63%]                               48.6 kB/s 50s30% [21 x11-apps 417 kB/610 kB 68%]                               48.6 kB/s 49s31% [21 x11-apps 442 kB/610 kB 72%]                                123 kB/s 19s32% [21 x11-apps 476 kB/610 kB 78%]                                123 kB/s 19s33% [21 x11-apps 518 kB/610 kB 85%]                                123 kB/s 18s34% [21 x11-apps 551 kB/610 kB 90%]                                123 kB/s 18s35% [21 x11-apps 588 kB/610 kB 96%]                                123 kB/s 18s36% [Working]                                                      123 kB/s 17s                                                                               Get:22 http://archive.ubuntu.com/ubuntu/ trusty/main x11-session-utils amd64 7.7+1 [65.6 kB]
+36% [22 x11-session-utils 1,681 B/65.6 kB 3%]                      123 kB/s 17s38% [22 x11-session-utils 60.5 kB/65.6 kB 92%]                     123 kB/s 17s38% [Working]                                                      123 kB/s 17s38% [Waiting for headers]                                          123 kB/s 17s                                                                               Get:23 http://archive.ubuntu.com/ubuntu/ trusty/main x11-utils amd64 7.7+1 [230 kB]
+38% [23 x11-utils 3,695 B/230 kB 2%]                               123 kB/s 17s40% [23 x11-utils 65.9 kB/230 kB 29%]                              123 kB/s 16s41% [23 x11-utils 114 kB/230 kB 50%]                               123 kB/s 16s42% [23 x11-utils 159 kB/230 kB 69%]                               123 kB/s 16s44% [23 x11-utils 201 kB/230 kB 87%]                               123 kB/s 15s45% [Working]                                                     75.7 kB/s 25s                                                                               Get:24 http://archive.ubuntu.com/ubuntu/ trusty/main x11-xfs-utils amd64 7.7+1 [23.6 kB]
+45% [24 x11-xfs-utils 2,490 B/23.6 kB 11%]                        75.7 kB/s 25s45% [Working]                                                     75.7 kB/s 24s                                                                               Get:25 http://archive.ubuntu.com/ubuntu/ trusty/main x11-xkb-utils amd64 7.7+1 [156 kB]
+45% [25 x11-xkb-utils 3,695 B/156 kB 2%]                          75.7 kB/s 24s47% [25 x11-xkb-utils 53.5 kB/156 kB 34%]                         75.7 kB/s 24s48% [25 x11-xkb-utils 91.2 kB/156 kB 59%]                         75.7 kB/s 23s49% [25 x11-xkb-utils 133 kB/156 kB 86%]                          75.7 kB/s 23s50% [Working]                                                     75.7 kB/s 22s                                                                               Get:26 http://archive.ubuntu.com/ubuntu/ trusty/main x11-xserver-utils amd64 7.7+2ubuntu1 [151 kB]
+50% [26 x11-xserver-utils 2,347 B/151 kB 2%]                      75.7 kB/s 22s52% [26 x11-xserver-utils 64.7 kB/151 kB 43%]                     75.7 kB/s 22s53% [26 x11-xserver-utils 98.4 kB/151 kB 65%]                     75.7 kB/s 21s53% [26 x11-xserver-utils 127 kB/151 kB 84%]                      75.7 kB/s 21s54% [26 x11-xserver-utils 133 kB/151 kB 88%]                      75.7 kB/s 21s54% [Working]                                                     75.7 kB/s 20s                                                                               Get:27 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe xbase-clients all 1:7.7+1ubuntu8.1 [2,756 B]
+54% [27 xbase-clients 2,351 B/2,756 B 85%]                        75.7 kB/s 20s54% [Working]                                                     75.7 kB/s 20s                                                                               Get:28 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe vnc4server amd64 4.1.1+xorg4.3.0-37ubuntu5.0.1 [1,577 kB]
+54% [28 vnc4server 2,345 B/1,577 kB 0%]                           75.7 kB/s 20s55% [28 vnc4server 17.5 kB/1,577 kB 1%]                           56.4 kB/s 27s55% [28 vnc4server 32.3 kB/1,577 kB 2%]                           56.4 kB/s 27s56% [28 vnc4server 49.9 kB/1,577 kB 3%]                           56.4 kB/s 27s56% [28 vnc4server 71.4 kB/1,577 kB 5%]                           56.4 kB/s 26s57% [28 vnc4server 95.7 kB/1,577 kB 6%]                           56.4 kB/s 26s58% [28 vnc4server 132 kB/1,577 kB 8%]                            56.4 kB/s 25s59% [28 vnc4server 164 kB/1,577 kB 10%]                           56.4 kB/s 25s60% [28 vnc4server 187 kB/1,577 kB 12%]                           56.4 kB/s 24s60% [28 vnc4server 208 kB/1,577 kB 13%]                           56.4 kB/s 24s61% [28 vnc4server 230 kB/1,577 kB 15%]                           56.4 kB/s 23s62% [28 vnc4server 256 kB/1,577 kB 16%]                           56.4 kB/s 23s63% [28 vnc4server 288 kB/1,577 kB 18%]                           56.4 kB/s 22s64% [28 vnc4server 329 kB/1,577 kB 21%]                           51.8 kB/s 24s64% [28 vnc4server 344 kB/1,577 kB 22%]                           51.8 kB/s 23s65% [28 vnc4server 379 kB/1,577 kB 24%]                           51.8 kB/s 23s66% [28 vnc4server 402 kB/1,577 kB 25%]                           51.8 kB/s 22s67% [28 vnc4server 430 kB/1,577 kB 27%]                           51.8 kB/s 22s68% [28 vnc4server 464 kB/1,577 kB 29%]                           51.8 kB/s 21s69% [28 vnc4server 495 kB/1,577 kB 31%]                           51.8 kB/s 20s70% [28 vnc4server 528 kB/1,577 kB 34%]                           51.8 kB/s 20s71% [28 vnc4server 563 kB/1,577 kB 36%]                           51.8 kB/s 19s72% [28 vnc4server 605 kB/1,577 kB 38%]                           51.8 kB/s 18s73% [28 vnc4server 654 kB/1,577 kB 41%]                           51.8 kB/s 17s75% [28 vnc4server 704 kB/1,577 kB 45%]                           51.8 kB/s 16s76% [28 vnc4server 751 kB/1,577 kB 48%]                           70.2 kB/s 11s77% [28 vnc4server 801 kB/1,577 kB 51%]                           70.2 kB/s 11s79% [28 vnc4server 853 kB/1,577 kB 54%]                           70.2 kB/s 10s80% [28 vnc4server 890 kB/1,577 kB 56%]                            70.2 kB/s 9s82% [28 vnc4server 946 kB/1,577 kB 60%]                            70.2 kB/s 8s83% [28 vnc4server 981 kB/1,577 kB 62%]                            70.2 kB/s 8s84% [28 vnc4server 1,016 kB/1,577 kB 64%]                          70.2 kB/s 7s85% [28 vnc4server 1,054 kB/1,577 kB 67%]                          70.2 kB/s 7s86% [28 vnc4server 1,103 kB/1,577 kB 70%]                          70.2 kB/s 6s88% [28 vnc4server 1,151 kB/1,577 kB 73%]                          70.2 kB/s 6s89% [28 vnc4server 1,204 kB/1,577 kB 76%]                          70.2 kB/s 5s91% [28 vnc4server 1,254 kB/1,577 kB 80%]                          70.2 kB/s 4s92% [28 vnc4server 1,285 kB/1,577 kB 81%]                          88.9 kB/s 3s93% [28 vnc4server 1,335 kB/1,577 kB 85%]                          88.9 kB/s 2s94% [28 vnc4server 1,367 kB/1,577 kB 87%]                          88.9 kB/s 2s94% [28 vnc4server 1,383 kB/1,577 kB 88%]                          88.9 kB/s 2s95% [28 vnc4server 1,405 kB/1,577 kB 89%]                          88.9 kB/s 1s96% [28 vnc4server 1,433 kB/1,577 kB 91%]                          88.9 kB/s 1s97% [28 vnc4server 1,459 kB/1,577 kB 93%]                          88.9 kB/s 1s98% [28 vnc4server 1,494 kB/1,577 kB 95%]                          88.9 kB/s 0s99% [28 vnc4server 1,533 kB/1,577 kB 97%]                          88.9 kB/s 0s100% [28 vnc4server 1,569 kB/1,577 kB 100%]                        88.9 kB/s 0s100% [Working]                                                     88.9 kB/s 0s                                                                               Fetched 3,442 kB in 47s (72.5 kB/s)
+Selecting previously unselected package libfontenc1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 48614 files and directories currently installed.)
+Preparing to unpack .../libfontenc1_1%3a1.1.2-1_amd64.deb ...
+Unpacking libfontenc1:amd64 (1:1.1.2-1) ...
+Selecting previously unselected package libfs6:amd64.
+Preparing to unpack .../libfs6_2%3a1.0.5-1_amd64.deb ...
+Unpacking libfs6:amd64 (2:1.0.5-1) ...
+Selecting previously unselected package libglapi-mesa:amd64.
+Preparing to unpack .../libglapi-mesa_10.1.3-0ubuntu0.3_amd64.deb ...
+Unpacking libglapi-mesa:amd64 (10.1.3-0ubuntu0.3) ...
+Selecting previously unselected package libx11-xcb1:amd64.
+Preparing to unpack .../libx11-xcb1_2%3a1.6.2-1ubuntu2_amd64.deb ...
+Unpacking libx11-xcb1:amd64 (2:1.6.2-1ubuntu2) ...
+Selecting previously unselected package libxcb-dri2-0:amd64.
+Preparing to unpack .../libxcb-dri2-0_1.10-2ubuntu1_amd64.deb ...
+Unpacking libxcb-dri2-0:amd64 (1.10-2ubuntu1) ...
+Selecting previously unselected package libxcb-dri3-0:amd64.
+Preparing to unpack .../libxcb-dri3-0_1.10-2ubuntu1_amd64.deb ...
+Unpacking libxcb-dri3-0:amd64 (1.10-2ubuntu1) ...
+Selecting previously unselected package libxcb-glx0:amd64.
+Preparing to unpack .../libxcb-glx0_1.10-2ubuntu1_amd64.deb ...
+Unpacking libxcb-glx0:amd64 (1.10-2ubuntu1) ...
+Selecting previously unselected package libxcb-present0:amd64.
+Preparing to unpack .../libxcb-present0_1.10-2ubuntu1_amd64.deb ...
+Unpacking libxcb-present0:amd64 (1.10-2ubuntu1) ...
+Selecting previously unselected package libxcb-sync1:amd64.
+Preparing to unpack .../libxcb-sync1_1.10-2ubuntu1_amd64.deb ...
+Unpacking libxcb-sync1:amd64 (1.10-2ubuntu1) ...
+Selecting previously unselected package libxshmfence1:amd64.
+Preparing to unpack .../libxshmfence1_1.1-2_amd64.deb ...
+Unpacking libxshmfence1:amd64 (1.1-2) ...
+Selecting previously unselected package libxxf86vm1:amd64.
+Preparing to unpack .../libxxf86vm1_1%3a1.1.3-1_amd64.deb ...
+Unpacking libxxf86vm1:amd64 (1:1.1.3-1) ...
+Selecting previously unselected package libgl1-mesa-glx:amd64.
+Preparing to unpack .../libgl1-mesa-glx_10.1.3-0ubuntu0.3_amd64.deb ...
+Unpacking libgl1-mesa-glx:amd64 (10.1.3-0ubuntu0.3) ...
+Selecting previously unselected package libxmu6:amd64.
+Preparing to unpack .../libxmu6_2%3a1.1.1-1_amd64.deb ...
+Unpacking libxmu6:amd64 (2:1.1.1-1) ...
+Selecting previously unselected package libxpm4:amd64.
+Preparing to unpack .../libxpm4_1%3a3.5.10-1_amd64.deb ...
+Unpacking libxpm4:amd64 (1:3.5.10-1) ...
+Selecting previously unselected package libxaw7:amd64.
+Preparing to unpack .../libxaw7_2%3a1.0.12-1_amd64.deb ...
+Unpacking libxaw7:amd64 (2:1.0.12-1) ...
+Selecting previously unselected package libxcb-shape0:amd64.
+Preparing to unpack .../libxcb-shape0_1.10-2ubuntu1_amd64.deb ...
+Unpacking libxcb-shape0:amd64 (1.10-2ubuntu1) ...
+Selecting previously unselected package libxkbfile1:amd64.
+Preparing to unpack .../libxkbfile1_1%3a1.0.8-1_amd64.deb ...
+Unpacking libxkbfile1:amd64 (1:1.0.8-1) ...
+Selecting previously unselected package libxtst6:amd64.
+Preparing to unpack .../libxtst6_2%3a1.2.2-1_amd64.deb ...
+Unpacking libxtst6:amd64 (2:1.2.2-1) ...
+Selecting previously unselected package libxv1:amd64.
+Preparing to unpack .../libxv1_2%3a1.0.10-1_amd64.deb ...
+Unpacking libxv1:amd64 (2:1.0.10-1) ...
+Selecting previously unselected package libxxf86dga1:amd64.
+Preparing to unpack .../libxxf86dga1_2%3a1.1.4-1_amd64.deb ...
+Unpacking libxxf86dga1:amd64 (2:1.1.4-1) ...
+Selecting previously unselected package x11-apps.
+Preparing to unpack .../x11-apps_7.7+2_amd64.deb ...
+Unpacking x11-apps (7.7+2) ...
+Selecting previously unselected package x11-session-utils.
+Preparing to unpack .../x11-session-utils_7.7+1_amd64.deb ...
+Unpacking x11-session-utils (7.7+1) ...
+Selecting previously unselected package x11-utils.
+Preparing to unpack .../x11-utils_7.7+1_amd64.deb ...
+Unpacking x11-utils (7.7+1) ...
+Selecting previously unselected package x11-xfs-utils.
+Preparing to unpack .../x11-xfs-utils_7.7+1_amd64.deb ...
+Unpacking x11-xfs-utils (7.7+1) ...
+Selecting previously unselected package x11-xkb-utils.
+Preparing to unpack .../x11-xkb-utils_7.7+1_amd64.deb ...
+Unpacking x11-xkb-utils (7.7+1) 
